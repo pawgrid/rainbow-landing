@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Knights - 반려동물 장례 서비스 비교 플랫폼</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* 헤더 */
+        header {
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-button {
+            background: #1a1a1a;
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .nav-button:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero 섹션 */
+        .hero {
+            padding: 120px 40px 100px;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        .hero-slide {
+            min-width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            animation: fadeSlide 15s infinite;
+        }
+
+        .hero-slide:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .hero-slide:nth-child(2) {
+            animation-delay: 5s;
+        }
+
+        .hero-slide:nth-child(3) {
+            animation-delay: 10s;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeSlide {
+            0% {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            8%, 30% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            38%, 100% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+        }
+
+        .hero-content {
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #1a1a1a;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-button:hover {
+            background: #f5f5f5;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 데모 섹션 */
+        .demo-section {
+            padding: 100px 40px;
+            background: #ffffff;
+        }
+
+        .demo-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .demo-header h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.8px;
+            color: #1a1a1a;
+        }
+
+        .demo-header p {
+            font-size: 16px;
+            color: #666666;
+            font-weight: 400;
+        }
+
+        .demo-container {
+            background: transparent;
+            padding: 40px 0;
+        }
+
+        /* 비교 카드 그리드 */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            padding-bottom: 32px;
+        }
+
+        .company-card {
+            background: white;
+            border-radius: 12px;
+            overflow: visible;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            width: 288px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .company-card::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            height: 8px;
+            background: #f0f0f0;
+            border-radius: 0 0 12px 12px;
+            opacity: 1;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .company-card::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 0 0 12px 12px;
+            opacity: 1;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .company-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .company-card:hover::before {
+            opacity: 0;
+        }
+
+        .company-card:hover::after {
+            opacity: 0;
+        }
+
+        .company-image-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            margin-bottom: 12px;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .company-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .distance-badge {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .company-info {
+            padding: 0 4px;
+        }
+
+        .company-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .company-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            flex: 1;
+        }
+
+        .heart-button {
+            padding: 6px;
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            transition: all 0.2s;
+        }
+
+        .heart-button:hover {
+            background: #e5e5e5;
+        }
+
+        .heart-icon {
+            width: 16px;
+            height: 16px;
+            color: #999999;
+        }
+
+        .company-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 8px;
+            padding-top: 4px;
+        }
+
+        .service-tag {
+            background: #f5f5f5;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666666;
+        }
+
+        .company-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #999999;
+            margin-bottom: 8px;
+        }
+
+        .company-meta .star {
+            color: #fbbf24;
+            font-size: 12px;
+        }
+
+        .company-price {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .company-price .unit {
+            font-size: 14px;
+            color: #999999;
+            font-weight: 400;
+        }
+
+        /* 문제점 섹션 */
+        .problems-section {
+            padding: 100px 40px;
+            background: #e8e8e8;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .problem-main-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: visible;
+            background: transparent;
+        }
+
+        .problem-main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            mix-blend-mode: normal;
+        }
+
+        .problem-texts {
+            display: contents;
+        }
+
+        .problem-text-item {
+            text-align: center;
+        }
+
+        .problem-text-item.before h3 {
+            color: #1a1a1a;
+        }
+
+        .problem-text-item.after h3 {
+            color: #1a1a1a;
+        }
+
+        .problem-text-item h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .problem-text-item p {
+            font-size: 15px;
+            color: #666666;
+            line-height: 1.6;
+        }
+
+        /* 무지개다리 섹션 */
+        .rainbow-section {
+            padding: 100px 40px;
+            background: #ffffff;
+            position: relative;
+        }
+
+        .rainbow-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .rainbow-text h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: -0.8px;
+            color: #1a1a1a;
+        }
+
+        .rainbow-text p {
+            font-size: 16px;
+            color: #666666;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .rainbow-illustration {
+            width: 100%;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 리뷰 섹션 */
+        .reviews-section {
+            padding: 100px 40px;
+            background: #ffffff;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .review-card {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.2s;
+        }
+
+        .review-card:hover {
+            border-color: #e0e0e0;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .reviewer-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1a1a1a;
+        }
+
+        .reviewer-info p {
+            font-size: 13px;
+            color: #999999;
+        }
+
+        .review-rating {
+            display: flex;
+            gap: 2px;
+            color: #fbbf24;
+            font-size: 14px;
+        }
+
+        .review-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        /* 기능 섹션 */
+        .features-section {
+            padding: 100px 40px;
+            background: #e8e8e8;
+            color: #1a1a1a;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 24px;
+        }
+
+        .feature-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: rgba(26, 26, 26, 0.1);
+            color: #1a1a1a;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .feature-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+        }
+
+        .feature-content p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #666666;
+        }
+
+        /* FAQ 섹션 */
+        .faq-section {
+            padding: 100px 40px;
+            background: #e8e8e8;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: #fafafa;
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin: 0;
+            flex: 1;
+            text-align: left;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+            color: #666666;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 24px 24px 24px;
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* CTA 섹션 */
+        .cta-section {
+            padding: 100px 40px;
+            background: #ffffff;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.8px;
+            color: #1a1a1a;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            margin-bottom: 40px;
+            color: #666666;
+        }
+
+        .cta-button-large {
+            display: inline-block;
+            background: #1a1a1a;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .cta-button-large:hover {
+            opacity: 0.8;
+            background: #2a2a2a;
+        }
+
+        /* 푸터 */
+        footer {
+            background: #1a1a1a;
+            color: #999999;
+            padding: 80px 40px 40px;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-section ul li a {
+            color: #999999;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #cccccc;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #333333;
+            font-size: 13px;
+        }
+
+        /* 반응형 */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 32px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
+            }
+
+            .comparison-grid .company-card {
+                width: 100%;
+            }
+
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .problems-grid,
+            .rainbow-content {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .problems-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .problem-main-image {
+                max-width: 100%;
+                order: 1;
+            }
+
+            .problem-text-item.before {
+                order: 2;
+            }
+
+            .problem-text-item.after {
+                order: 3;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            .hero {
+                padding: 80px 24px 60px;
+                min-height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .demo-section,
+            .problems-section,
+            .rainbow-section,
+            .reviews-section,
+            .features-section,
+            .faq-section,
+            .cta-section {
+                padding: 60px 24px;
+            }
+
+            .demo-header h2,
+            .rainbow-text h2,
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .comparison-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Rainbow Knights</a>
+                <button class="nav-button">서비스 시작하기</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero 섹션 -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-slider">
+                <div class="hero-slide">
+                    <img src="images/petforest-1.jpg" alt="장례식장">
+                </div>
+                <div class="hero-slide">
+                    <img src="images/21gram-2.jpg" alt="장례식장">
+                </div>
+                <div class="hero-slide">
+                    <img src="images/21gram-3.jpg" alt="장례식장">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>검증된 반려동물 장례 업체를<br>한눈에 비교하세요</h1>
+                <p class="hero-subtitle">
+                    실제 이용 후기와 평점을 바탕으로<br>
+                    신뢰할 수 있는 업체를 쉽게 찾을 수 있습니다
+                </p>
+                <a href="#" class="hero-button">서비스 시작하기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 비교 화면 데모 -->
+    <section class="demo-section">
+        <div class="container">
+            <div class="demo-header">
+                <h2>검증된 장례서비스만 찾고 비교</h2>
+                <p>가격, 서비스, 리뷰를 한 화면에서 비교하고 선택하세요</p>
+            </div>
+            <div class="demo-container">
+                <div class="comparison-grid" style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                    <div class="company-card">
+                        <div class="company-image-wrapper">
+                            <img src="images/petforest-1.jpg" alt="펫포레스트" class="company-image">
+                            <div class="distance-badge">2.5km</div>
+                        </div>
+                        <div class="company-info">
+                            <div class="company-header">
+                                <div class="company-name">펫포레스트</div>
+                                <button class="heart-button">
+                                    <svg class="heart-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="company-services">
+                                <span class="service-tag">개별 화장</span>
+                                <span class="service-tag">안치</span>
+                                <span class="service-tag">납골</span>
+                            </div>
+                            <div class="company-meta">
+                                <svg class="star" fill="currentColor" viewBox="0 0 20 20" width="12" height="12">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span>4.8</span>
+                                <span>경기도 광주시 · 2.5km</span>
+                            </div>
+                            <div class="company-price">150,000<span class="unit">원</span></div>
+                        </div>
+                    </div>
+                    <div class="company-card">
+                        <div class="company-image-wrapper">
+                            <img src="images/21gram-2.jpg" alt="천국의 문" class="company-image">
+                            <div class="distance-badge">3.2km</div>
+                        </div>
+                        <div class="company-info">
+                            <div class="company-header">
+                                <div class="company-name">천국의 문</div>
+                                <button class="heart-button">
+                                    <svg class="heart-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="company-services">
+                                <span class="service-tag">개별 화장</span>
+                                <span class="service-tag">안치</span>
+                                <span class="service-tag">추모식</span>
+                            </div>
+                            <div class="company-meta">
+                                <svg class="star" fill="currentColor" viewBox="0 0 20 20" width="12" height="12">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span>4.9</span>
+                                <span>서울시 서초구 · 3.2km</span>
+                            </div>
+                            <div class="company-price">180,000<span class="unit">원</span></div>
+                        </div>
+                    </div>
+                    <div class="company-card">
+                        <div class="company-image-wrapper">
+                            <img src="images/21gram-3.jpg" alt="평화로운 이별" class="company-image">
+                            <div class="distance-badge">1.8km</div>
+                        </div>
+                        <div class="company-info">
+                            <div class="company-header">
+                                <div class="company-name">평화로운 이별</div>
+                                <button class="heart-button">
+                                    <svg class="heart-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="company-services">
+                                <span class="service-tag">개별 화장</span>
+                                <span class="service-tag">안치</span>
+                                <span class="service-tag">납골</span>
+                            </div>
+                            <div class="company-meta">
+                                <svg class="star" fill="currentColor" viewBox="0 0 20 20" width="12" height="12">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <span>4.7</span>
+                                <span>서울시 마포구 · 1.8km</span>
+                            </div>
+                            <div class="company-price">120,000<span class="unit">원</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문제점 섹션 -->
+    <section class="problems-section">
+        <div class="container">
+            <div class="demo-header">
+                <h2>광고만 많고 비교하기 어려운 장례서비스</h2>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-text-item before">
+                    <h3>검색하면 광고만 보입니다</h3>
+                    <p>장례식장을 검색하면 상단에 광고 업체만 노출되어 실제로 신뢰할 수 있는 업체를 찾기 어렵습니다</p>
+                </div>
+                <div class="problem-main-image">
+                    <img src="images/manyads.png" alt="광고만 많고 비교하기 어려운 문제 vs 해결책">
+                </div>
+                <div class="problem-text-item after">
+                    <h3>가격 비교가 한눈에</h3>
+                    <p>Rainbow Knights에서는 표준화된 옵션으로 업체별 가격을 쉽게 비교하고 선택할 수 있습니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 무지개다리 섹션 -->
+    <section class="rainbow-section">
+        <div class="container">
+            <div class="rainbow-content">
+                <div class="rainbow-text">
+                    <h2>무지개다리 케어 서비스</h2>
+                    <p>
+                        반려동물이 무지개다리를 건널 때,<br>
+                        믿을 수 있는 장례 서비스를 찾는 것은 보호자에게 가장 중요한 일입니다.
+                    </p>
+                    <p>
+                        힘든 순간에 장례식장 선택의 부담까지 더해져서는 안 됩니다.<br><br>
+                        검증된 정보와 투명한 비교를 통해 안심하고 선택할 수 있도록,<br>
+                        Rainbow Knights가 반려동물의 무지개다리를 지켜드리겠습니다.
+                    </p>
+                </div>
+                <div class="rainbow-illustration">
+                    <img src="images/rainbow_bridge.png" alt="무지개다리 케어 서비스" style="width: 100%; height: auto; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 주요 기능 -->
+    <section class="features-section">
+        <div class="container">
+            <div class="demo-header">
+                <h2 style="color: #1a1a1a;">레인보우나이츠 주요 서비스</h2>
+                <p style="color: #666666;">검증된 장례서비스를 손쉽게 비교하고, 진행과정까지 실시간 공유</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-number">1</div>
+                    <div class="feature-content">
+                        <h3>표준화된 장례옵션</h3>
+                        <p>개별화장, 유골함, 수의/관 등 표준화된 옵션을 선택하고 그에 맞는 업체를 검색하고 비교할 수 있습니다</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">2</div>
+                    <div class="feature-content">
+                        <h3>실시간 예약 시스템</h3>
+                        <p>원하는 날짜와 시간을 선택하여 바로 예약할 수 있으며, 업체와의 일정 조율도 자동으로 진행됩니다 (일부업체 제외)</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">3</div>
+                    <div class="feature-content">
+                        <h3>투명한 서비스/가격 정보</h3>
+                        <p>서비스 항목의 포함여부를 확인하고 예약/결제하여 예산에 맞는 서비스를 이용할 수 있습니다</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-number">4</div>
+                    <div class="feature-content">
+                        <h3>장례서비스 진행경과 확인(서비스 예정)</h3>
+                        <p>서비스 예약 후 픽업, 염습, 화장, 유골 인도 등의 과정을 실시간으로 확인할 수 있습니다</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 실제 리뷰 섹션 -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="demo-header">
+                <h2>실제 이용 후기</h2>
+                <p>서비스를 이용한 고객들의 솔직한 리뷰입니다</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <h4>김○○님</h4>
+                            <p>2024년 12월 이용</p>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                    </div>
+                    <div class="review-text">
+                        업체 비교가 정말 쉽게 되었습니다. 가격부터 서비스 내용까지 한눈에 보고 선택할 수 있어서 
+                        힘든 상황에서도 후회 없는 결정을 할 수 있었습니다. 직원분들도 정말 따뜻하게 대해주셔서 
+                        마음이 편안했습니다.
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <h4>이○○님</h4>
+                            <p>2024년 11월 이용</p>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                    </div>
+                    <div class="review-text">
+                        검증된 업체만 있어서 안심하고 선택할 수 있었습니다. 다른 사이트와 달리 
+                        실제 이용 후기가 많아서 신뢰가 갔고, 예약 과정도 간편했습니다.
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <h4>박○○님</h4>
+                            <p>2024년 10월 이용</p>
+                        </div>
+                        <div class="review-rating">★★★★☆</div>
+                    </div>
+                    <div class="review-text">
+                        여러 업체를 비교할 수 있어서 좋았습니다. 특히 서비스별 가격이 명확하게 
+                        나와 있어서 예산 계획을 세우기 편했습니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ 섹션 -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="demo-header">
+                <h2>자주 묻는 질문</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <h3>어떻게 업체를 검색할 수 있나요?</h3>
+                        <div class="faq-icon">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 6l4 4 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            지역, 가격대, 서비스 유형 등 다양한 필터를 사용하여 원하는 장례 업체를 검색할 수 있습니다. 표준화된 옵션을 선택하면 그에 맞는 업체들이 자동으로 필터링되어 나타납니다.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>예약은 어떻게 진행되나요?</h3>
+                        <div class="faq-icon">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 6l4 4 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            원하는 업체와 날짜를 선택하면 실시간으로 예약이 진행됩니다. 일부 업체의 경우 자동 예약이 불가능할 수 있으며, 이 경우 업체에 직접 문의하실 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>가격 정보는 정확한가요?</h3>
+                        <div class="faq-icon">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 6l4 4 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            모든 업체의 가격 정보는 표준화된 옵션 기준으로 제공되며, 실제 결제 시 업체와 최종 확인이 필요합니다. 서비스 항목의 포함 여부를 사전에 확인하실 수 있어 예상치 못한 추가 비용 없이 예산을 계획하실 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>서비스 진행 상황을 확인할 수 있나요?</h3>
+                        <div class="faq-icon">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 6l4 4 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            예약 후 픽업, 염습, 화장, 유골 인도 등의 과정을 실시간으로 확인하실 수 있습니다. 각 단계별 진행 상황이 업데이트되며, 알림을 통해 안내를 받으실 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>업체는 어떻게 검증되나요?</h3>
+                        <div class="faq-icon">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 6l4 4 4-4"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Rainbow Knights에 등록된 모든 업체는 사업자 등록, 면허 보유 여부, 실서비스 이용 고객의 후기 등을 종합적으로 검토하여 검증됩니다. 불법 업체는 입점 단계에서 제외되므로 신뢰할 수 있는 업체만 비교하실 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA 섹션 -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>지금 바로 업체를 비교해보세요</h2>
+            <p>검증된 업체 정보와 실제 이용 후기를 확인할 수 있습니다</p>
+            <a href="#" class="cta-button-large">서비스 시작하기</a>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Rainbow Knights</h3>
+                    <p>
+                        검증된 반려동물 장례 업체를<br>
+                        쉽게 비교하고 선택할 수 있도록 도와드립니다.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>서비스</h4>
+                    <ul>
+                        <li><a href="#">업체 검색</a></li>
+                        <li><a href="#">예약하기</a></li>
+                        <li><a href="#">리뷰 보기</a></li>
+                        <li><a href="#">장례 가이드</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">자주 묻는 질문</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>연락처</h4>
+                    <ul>
+                        <li>전화: 1588-1234</li>
+                        <li>이메일: support@rainbow.kr</li>
+                        <li>운영시간: 24시간</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rainbow Knights. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // FAQ 아코디언 기능
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // 모든 FAQ 항목 닫기
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // 클릭한 항목이 닫혀있었다면 열기
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
