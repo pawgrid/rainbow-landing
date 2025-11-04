@@ -4,6 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainbow Knights - 반려동물 장례 서비스 비교 플랫폼</title>
+    <meta name="description" content="반려동물 장례 서비스를 비교하고 선택할 수 있는 플랫폼. 검증된 업체 정보, 실제 이용 후기, 상세 가이드를 제공합니다. 반려동물 장례 가이드로 모든 궁금증을 해결하세요.">
+    <meta name="keywords" content="반려동물 장례, 반려동물 장례식장, 반려동물 화장, 반려동물 장례 가이드, 반려동물 장례 비용, 반려동물 장례 서비스, 반려동물 장례 비교, 펫 장례">
+    <meta name="author" content="Rainbow Knights">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rainbowknights.kr/">
+    <meta property="og:title" content="Rainbow Knights - 반려동물 장례 서비스 비교 플랫폼">
+    <meta property="og:description" content="반려동물 장례 서비스를 비교하고 선택할 수 있는 플랫폼. 검증된 업체 정보와 상세 가이드를 제공합니다.">
+    <meta property="og:image" content="https://rainbowknights.kr/images/rainbow_bridge.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rainbowknights.kr/">
+    <meta property="twitter:title" content="Rainbow Knights - 반려동물 장례 서비스 비교 플랫폼">
+    <meta property="twitter:description" content="반려동물 장례 서비스를 비교하고 선택할 수 있는 플랫폼. 검증된 업체 정보와 상세 가이드를 제공합니다.">
+    <meta property="twitter:image" content="https://rainbowknights.kr/images/rainbow_bridge.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rainbowknights.kr/">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Rainbow Knights",
+      "url": "https://rainbowknights.kr/",
+      "description": "반려동물 장례 서비스를 비교하고 선택할 수 있는 플랫폼",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://rainbowknights.kr/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Rainbow Knights",
+      "url": "https://rainbowknights.kr/",
+      "logo": "https://rainbowknights.kr/images/rainbow_bridge.png",
+      "description": "반려동물 장례 서비스 비교 플랫폼",
+      "sameAs": []
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "홈",
+          "item": "https://rainbowknights.kr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "반려동물 장례 가이드",
+          "item": "https://rainbowknights.kr/guide.html"
+        }
+      ]
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -48,6 +115,25 @@
             color: #1a1a1a;
             text-decoration: none;
             letter-spacing: -0.3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-link {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.2s;
+            padding: 8px 0;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
         }
 
         .nav-button {
@@ -180,19 +266,31 @@
             display: inline-block;
             background: #ffffff;
             color: #1a1a1a;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-size: 15px;
-            font-weight: 500;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            letter-spacing: -0.2px;
         }
 
         .hero-button:hover {
-            background: #f5f5f5;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+            background: #f8f8f8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .button-subtitle {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 8px;
+            color: #ffffff;
+            opacity: 0.9;
+            text-align: center;
         }
 
         /* 데모 섹션 */
@@ -406,8 +504,8 @@
 
         .problems-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
             max-width: 1200px;
             margin: 0 auto;
             align-items: center;
@@ -415,8 +513,7 @@
 
         .problem-main-image {
             width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
+            max-width: 500px;
             border-radius: 12px;
             overflow: visible;
             background: transparent;
@@ -434,7 +531,13 @@
         }
 
         .problem-text-item {
-            text-align: center;
+            text-align: left;
+        }
+
+        .problems-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
 
         .problem-text-item.before h3 {
@@ -704,17 +807,30 @@
             display: inline-block;
             background: #1a1a1a;
             color: white;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-size: 15px;
-            font-weight: 500;
+            padding: 16px 36px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
             text-decoration: none;
-            transition: opacity 0.2s;
+            transition: all 0.3s ease;
+            text-align: center;
+            letter-spacing: -0.2px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
         }
 
         .cta-button-large:hover {
-            opacity: 0.8;
             background: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .button-subtitle-cta {
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            margin-top: 8px;
+            color: #666666;
+            text-align: center;
         }
 
         /* 푸터 */
@@ -811,15 +927,10 @@
 
             .problem-main-image {
                 max-width: 100%;
-                order: 1;
             }
 
-            .problem-text-item.before {
-                order: 2;
-            }
-
-            .problem-text-item.after {
-                order: 3;
+            .problems-text-wrapper {
+                gap: 32px;
             }
 
             .features-grid {
@@ -830,6 +941,23 @@
         @media (max-width: 768px) {
             .container {
                 padding: 0 24px;
+            }
+
+            .header-content {
+                height: 70px;
+            }
+
+            .nav-menu {
+                gap: 12px;
+            }
+
+            .nav-link {
+                font-size: 13px;
+            }
+
+            .nav-button {
+                padding: 8px 16px;
+                font-size: 13px;
             }
 
             .hero {
@@ -879,7 +1007,10 @@
         <div class="container">
             <div class="header-content">
                 <a href="#" class="logo">Rainbow Knights</a>
-                <button class="nav-button">서비스 시작하기</button>
+                <div class="nav-menu">
+                    <a href="guide.html" class="nav-link">반려동물 장례 가이드</a>
+                    <button class="nav-button">'26.1월 서비스 예정</button>
+                </div>
             </div>
         </div>
     </header>
@@ -892,21 +1023,29 @@
                     <img src="images/petforest-1.jpg" alt="장례식장">
                 </div>
                 <div class="hero-slide">
-                    <img src="images/21gram-2.jpg" alt="장례식장">
+                    <img src="images/clropet-1.jpg" alt="씨엘로펫 장례식장">
                 </div>
                 <div class="hero-slide">
-                    <img src="images/21gram-3.jpg" alt="장례식장">
+                    <img src="images/osu-pet-1.jpg" alt="오수 펫 추모공원 장례식장">
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="hero-content">
-                <h1>검증된 반려동물 장례 업체를<br>한눈에 비교하세요</h1>
+                <h1>반려동물 장례서비스</h1>
                 <p class="hero-subtitle">
                     실제 이용 후기와 평점을 바탕으로<br>
                     신뢰할 수 있는 업체를 쉽게 찾을 수 있습니다
                 </p>
-                <a href="#" class="hero-button">서비스 시작하기</a>
+                <div style="text-align: center;">
+                    <a href="#" class="hero-button">
+                        장례서비스 비교하기
+                    </a>
+                    <div class="button-subtitle">'26.1월 서비스 예정</div>
+                </div>
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="guide.html" style="color: #ffffff; text-decoration: underline; font-size: 16px;">반려동물 장례 가이드 보기 →</a>
+                </div>
             </div>
         </div>
     </section>
@@ -915,7 +1054,7 @@
     <section class="demo-section">
         <div class="container">
             <div class="demo-header">
-                <h2>검증된 장례서비스만 찾고 비교</h2>
+                <h2>장례서비스 비교 플랫폼</h2>
                 <p>가격, 서비스, 리뷰를 한 화면에서 비교하고 선택하세요</p>
             </div>
             <div class="demo-container">
@@ -951,12 +1090,12 @@
                     </div>
                     <div class="company-card">
                         <div class="company-image-wrapper">
-                            <img src="images/21gram-2.jpg" alt="천국의 문" class="company-image">
+                            <img src="images/clropet-1.jpg" alt="씨엘로펫" class="company-image">
                             <div class="distance-badge">3.2km</div>
                         </div>
                         <div class="company-info">
                             <div class="company-header">
-                                <div class="company-name">천국의 문</div>
+                                <div class="company-name">씨엘로펫</div>
                                 <button class="heart-button">
                                     <svg class="heart-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -973,19 +1112,19 @@
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <span>4.9</span>
-                                <span>서울시 서초구 · 3.2km</span>
+                                <span>경기도 용인시 · 3.2km</span>
                             </div>
                             <div class="company-price">180,000<span class="unit">원</span></div>
                         </div>
                     </div>
                     <div class="company-card">
                         <div class="company-image-wrapper">
-                            <img src="images/21gram-3.jpg" alt="평화로운 이별" class="company-image">
+                            <img src="images/osu-pet-1.jpg" alt="오수 펫 추모공원" class="company-image">
                             <div class="distance-badge">1.8km</div>
                         </div>
                         <div class="company-info">
                             <div class="company-header">
-                                <div class="company-name">평화로운 이별</div>
+                                <div class="company-name">오수 펫 추모공원</div>
                                 <button class="heart-button">
                                     <svg class="heart-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -1002,7 +1141,7 @@
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                                 <span>4.7</span>
-                                <span>서울시 마포구 · 1.8km</span>
+                                <span>전북 임실군 오수면 · 1.8km</span>
                             </div>
                             <div class="company-price">120,000<span class="unit">원</span></div>
                         </div>
@@ -1016,19 +1155,21 @@
     <section class="problems-section">
         <div class="container">
             <div class="demo-header">
-                <h2>광고만 많고 비교하기 어려운 장례서비스</h2>
+                <h2>선택하기 어려운 장례서비스</h2>
             </div>
             <div class="problems-grid">
-                <div class="problem-text-item before">
-                    <h3>검색하면 광고만 보입니다</h3>
-                    <p>장례식장을 검색하면 상단에 광고 업체만 노출되어 실제로 신뢰할 수 있는 업체를 찾기 어렵습니다</p>
-                </div>
                 <div class="problem-main-image">
-                    <img src="images/manyads.png" alt="광고만 많고 비교하기 어려운 문제 vs 해결책">
+                    <img src="images/manyads.png" alt="반려동물 장례서비스 비교 어려움 - Rainbow Knights 플랫폼으로 해결">
                 </div>
-                <div class="problem-text-item after">
-                    <h3>가격 비교가 한눈에</h3>
-                    <p>Rainbow Knights에서는 표준화된 옵션으로 업체별 가격을 쉽게 비교하고 선택할 수 있습니다</p>
+                <div class="problems-text-wrapper">
+                    <div class="problem-text-item before">
+                        <h3>검색하면 광고만 보입니다</h3>
+                        <p>장례식장을 검색하면 상단에 광고 업체만 노출되어 실제로 신뢰할 수 있는 업체를 찾기 어렵습니다</p>
+                    </div>
+                    <div class="problem-text-item after">
+                        <h3>비교하기 어려운 장례서비스</h3>
+                        <p>업체 페이지를 각각 들어가서 봐야 하고 서비스 품질과 기준이 모두 달라서 비교하기 어렵습니다</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1047,7 +1188,8 @@
                     <p>
                         힘든 순간에 장례식장 선택의 부담까지 더해져서는 안 됩니다.<br><br>
                         검증된 정보와 투명한 비교를 통해 안심하고 선택할 수 있도록,<br>
-                        Rainbow Knights가 반려동물의 무지개다리를 지켜드리겠습니다.
+                        Rainbow Knights가 반려동물의 무지개다리를 지켜드리겠습니다.<br><br>
+                        <a href="guide.html" style="color: #1a1a1a; text-decoration: underline; font-weight: 500;">반려동물 장례 가이드에서 모든 정보를 확인하세요 →</a>
                     </p>
                 </div>
                 <div class="rainbow-illustration">
@@ -1101,7 +1243,7 @@
     <section class="reviews-section">
         <div class="container">
             <div class="demo-header">
-                <h2>실제 이용 후기</h2>
+                <h2>실제 이용후기(예시)</h2>
                 <p>서비스를 이용한 고객들의 솔직한 리뷰입니다</p>
             </div>
             <div class="reviews-grid">
@@ -1154,6 +1296,7 @@
         <div class="container">
             <div class="demo-header">
                 <h2>자주 묻는 질문</h2>
+                <p>더 자세한 정보가 필요하시다면 <a href="guide.html" style="color: #1a1a1a; text-decoration: underline; font-weight: 500;">반려동물 장례 가이드</a>를 확인해보세요</p>
             </div>
             <div class="faq-container">
                 <div class="faq-item active">
@@ -1238,9 +1381,17 @@
     <!-- CTA 섹션 -->
     <section class="cta-section">
         <div class="container">
-            <h2>지금 바로 업체를 비교해보세요</h2>
+            <h2>지금 서비스를 비교해보세요</h2>
             <p>검증된 업체 정보와 실제 이용 후기를 확인할 수 있습니다</p>
-            <a href="#" class="cta-button-large">서비스 시작하기</a>
+            <div style="text-align: center;">
+                <a href="#" class="cta-button-large">
+                    장례서비스 비교하기
+                </a>
+                <div class="button-subtitle-cta">'26.1월 서비스 예정</div>
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="guide.html" style="color: #1a1a1a; text-decoration: underline; font-size: 16px; font-weight: 500;">반려동물 장례 가이드 보기 →</a>
+            </div>
         </div>
     </section>
 
@@ -1309,6 +1460,39 @@
                 });
             });
         });
+
+        // 방문수 집계 (간단한 버전 - localStorage 사용)
+        (function() {
+            // 방문수 카운터
+            let visitCount = localStorage.getItem('rk_visit_count');
+            if (!visitCount) {
+                visitCount = 1;
+            } else {
+                visitCount = parseInt(visitCount) + 1;
+            }
+            localStorage.setItem('rk_visit_count', visitCount);
+            
+            // 마지막 방문 시간
+            const lastVisit = new Date().toISOString();
+            localStorage.setItem('rk_last_visit', lastVisit);
+            
+            // 페이지 소스 주석에 방문수 추가 (Ctrl+U로 확인 가능)
+            const comment = document.createComment(` 방문수: ${visitCount} | 마지막 방문: ${new Date(lastVisit).toLocaleString('ko-KR')} `);
+            document.head.appendChild(comment);
+            
+            // 개발자 콘솔에 표시 (F12 -> Console)
+            console.log('%c🌈 Rainbow Knights 방문 통계', 'color: #1a1a1a; font-size: 16px; font-weight: bold;');
+            console.log(`%c총 방문수: ${visitCount}회`, 'color: #666; font-size: 14px;');
+            console.log(`%c마지막 방문: ${new Date(lastVisit).toLocaleString('ko-KR')}`, 'color: #666; font-size: 12px;');
+            
+            // 특정 키 조합으로 통계 표시 (Ctrl+Shift+V)
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.shiftKey && e.key === 'V') {
+                    e.preventDefault();
+                    alert(`📊 Rainbow Knights 방문 통계\n\n총 방문수: ${visitCount}회\n마지막 방문: ${new Date(lastVisit).toLocaleString('ko-KR')}`);
+                }
+            });
+        })();
     </script>
 </body>
 </html>

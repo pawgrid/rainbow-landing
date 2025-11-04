@@ -49,3 +49,7 @@ Tender and elegant illustration of a small dog as a gentle knight or guardian, s
 3. **색상**: 현재 웹사이트가 #e8e8e8, 흰색, 검은색 위주이므로 일러스트도 비슷한 톤으로 맞추는 것을 권장합니다.
 4. **형식**: PNG 또는 SVG로 생성하되, 배경은 투명하게 요청하세요.
 
+
+
+
+
