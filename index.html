@@ -1082,6 +1082,123 @@
             margin-right: 8px;
         }
 
+        /* 서비스 일정 변경 안내 팝업 */
+        .schedule-notice-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .schedule-notice-modal.active {
+            display: flex;
+        }
+
+        .schedule-notice-modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .schedule-notice-modal-header {
+            margin-bottom: 24px;
+        }
+
+        .schedule-notice-modal-header h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+        }
+
+        .schedule-notice-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+            padding: 0;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+
+        .schedule-notice-modal-close:hover {
+            background: #f0f0f0;
+        }
+
+        .schedule-notice-modal-body {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .schedule-notice-modal-body p {
+            margin-bottom: 16px;
+        }
+
+        .schedule-notice-modal-body p:last-child {
+            margin-bottom: 0;
+            margin-top: 24px;
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .schedule-notice-modal-footer {
+            margin-top: 32px;
+            text-align: center;
+        }
+
+        .schedule-notice-modal-footer button {
+            background: #1a1a1a;
+            color: white;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .schedule-notice-modal-footer button:hover {
+            background: #2a2a2a;
+        }
+
+        @media (max-width: 768px) {
+            .schedule-notice-modal-content {
+                padding: 32px 24px;
+            }
+
+            .schedule-notice-modal-header h3 {
+                font-size: 20px;
+            }
+
+            .schedule-notice-modal-body {
+                font-size: 14px;
+            }
+        }
+
         /* 반응형 */
         @media (max-width: 1024px) {
             .container {
@@ -1196,7 +1313,7 @@
                 <a href="#" class="logo">Rainbow Knights</a>
                 <div class="nav-menu">
                     <a href="guide.html" class="nav-link">반려동물 장례 가이드</a>
-                    <button class="nav-button">'26.1월 서비스 예정</button>
+                    <button class="nav-button">'26.3월 서비스 예정</button>
                 </div>
             </div>
         </div>
@@ -1228,7 +1345,7 @@
                     <a href="#" class="hero-button">
                         장례서비스 비교하기
                     </a>
-                    <div class="button-subtitle">'26.1월 서비스 예정</div>
+                    <div class="button-subtitle">'26.3월 서비스 예정</div>
                 </div>
                 <div style="margin-top: 20px; text-align: center;">
                     <a href="guide.html" style="color: #ffffff; text-decoration: underline; font-size: 16px;">반려동물 장례 가이드 보기 →</a>
@@ -1688,7 +1805,7 @@
                 <a href="#" class="cta-button-large">
                     장례서비스 비교하기
                 </a>
-                <div class="button-subtitle-cta">'26.1월 서비스 예정</div>
+                <div class="button-subtitle-cta">'26.3월 서비스 예정</div>
             </div>
             <div style="margin-top: 20px; text-align: center;">
                 <a href="guide.html" style="color: #1a1a1a; text-decoration: underline; font-size: 16px; font-weight: 500;">반려동물 장례 가이드 보기 →</a>
@@ -1735,6 +1852,34 @@
         </div>
     </footer>
 
+    <!-- 서비스 일정 변경 안내 팝업 -->
+    <div class="schedule-notice-modal" id="scheduleNoticeModal">
+        <div class="schedule-notice-modal-content">
+            <button class="schedule-notice-modal-close" onclick="closeScheduleNotice()">&times;</button>
+            <div class="schedule-notice-modal-header">
+                <h3>레인보우나이츠 서비스 일정 변경 안내</h3>
+            </div>
+            <div class="schedule-notice-modal-body">
+                <p>안녕하세요, 레인보우나이츠입니다.</p>
+                <p>
+                    레인보우나이츠는 반려동물 장례서비스를 손쉽게 비교하고 예약할 수 있는<br>
+                    투명하고 신뢰할 수 있는 비교 플랫폼입니다.
+                </p>
+                <p>
+                    한국동물장례협회의 공식파트너이며,<br>
+                    여러 제휴처와의 협의를 통해 보다 안정적인 서비스를 제공하기 위해<br>
+                    서비스 일정을 '26년 3월로 변경하게 되었습니다.
+                </p>
+                <p>간편하고 믿을 수 있는 서비스로 보답하겠습니다.</p>
+                <p>많은 관심 부탁드립니다.</p>
+                <p>- 레인보우나이츠 팀 -</p>
+            </div>
+            <div class="schedule-notice-modal-footer">
+                <button onclick="closeScheduleNotice()">확인</button>
+            </div>
+        </div>
+    </div>
+
     <!-- 회사정보 모달 -->
     <div class="company-info-modal" id="companyInfoModal" onclick="closeCompanyInfo(event)">
         <div class="company-info-modal-content" onclick="event.stopPropagation()">
@@ -1771,6 +1916,39 @@
         </div>
     </div>
     <script>
+        // 서비스 일정 변경 안내 팝업
+        function showScheduleNotice() {
+            // localStorage에 팝업을 본 기록이 있는지 확인
+            const hasSeenNotice = localStorage.getItem('rk_schedule_notice_seen');
+            if (!hasSeenNotice) {
+                document.getElementById('scheduleNoticeModal').classList.add('active');
+            }
+        }
+
+        function closeScheduleNotice() {
+            document.getElementById('scheduleNoticeModal').classList.remove('active');
+            // 팝업을 닫으면 localStorage에 기록 (24시간 동안 다시 보지 않음)
+            localStorage.setItem('rk_schedule_notice_seen', 'true');
+            const expiryTime = new Date().getTime() + (24 * 60 * 60 * 1000); // 24시간
+            localStorage.setItem('rk_schedule_notice_expiry', expiryTime.toString());
+        }
+
+        // 페이지 로드 시 팝업 표시
+        document.addEventListener('DOMContentLoaded', function() {
+            // 24시간이 지났는지 확인
+            const expiry = localStorage.getItem('rk_schedule_notice_expiry');
+            if (expiry) {
+                const now = new Date().getTime();
+                if (now > parseInt(expiry)) {
+                    // 24시간이 지났으면 기록 삭제하고 다시 표시
+                    localStorage.removeItem('rk_schedule_notice_seen');
+                    localStorage.removeItem('rk_schedule_notice_expiry');
+                }
+            }
+            // 팝업 표시
+            setTimeout(showScheduleNotice, 500); // 0.5초 후 표시
+        });
+
         // FAQ 아코디언 기능
         document.addEventListener('DOMContentLoaded', function() {
             const faqQuestions = document.querySelectorAll('.faq-question');
