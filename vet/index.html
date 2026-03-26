@@ -39,7 +39,7 @@
             line-height: 1.65;
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
-            padding-bottom: calc(5.5rem + var(--safe-bottom));
+            padding-bottom: calc(1.25rem + var(--safe-bottom));
         }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
@@ -232,12 +232,6 @@
             padding: 1.5rem 1.25rem;
             box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
         }
-        .cta-block .hint {
-            font-size: 0.8125rem;
-            color: var(--muted);
-            margin-top: 1rem;
-            line-height: 1.55;
-        }
         .btn-row { display: flex; flex-direction: column; gap: 0.625rem; margin-top: 1.125rem; }
         @media (min-width: 420px) {
             .btn-row { flex-direction: row; flex-wrap: wrap; }
@@ -277,39 +271,9 @@
             min-width: min(100%, 12rem);
         }
         .btn-secondary:hover { background: var(--bg-alt); }
-        .sticky-cta {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 999;
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-top: 1px solid var(--line);
-            padding: 0.75rem 1.25rem calc(0.75rem + var(--safe-bottom));
-            box-shadow: 0 -8px 32px rgba(15, 23, 42, 0.08);
-        }
-        .sticky-cta p {
-            font-size: 0.75rem;
-            color: var(--muted);
-            margin-bottom: 0.5rem;
-            text-align: center;
-            line-height: 1.45;
-        }
-        .sticky-cta .btn-primary { width: 100%; }
-        @media (prefers-reduced-motion: no-preference) {
-            .sticky-cta .btn-primary {
-                animation: cta-soft 4s ease-in-out infinite;
-            }
-        }
-        @keyframes cta-soft {
-            0%, 100% { box-shadow: 0 1px 3px rgba(29, 78, 216, 0.25); }
-            50% { box-shadow: 0 4px 18px rgba(29, 78, 216, 0.32); }
-        }
         .toast {
             position: fixed;
-            bottom: calc(5.25rem + var(--safe-bottom));
+            bottom: calc(1.25rem + var(--safe-bottom));
             left: 50%;
             transform: translateX(-50%) translateY(6px);
             background: var(--text);
@@ -377,9 +341,9 @@
                 <div class="split-grid">
                     <div class="role-panel">
                         <h3>병원에서 하실 일</h3>
-                        <p><strong>보호자 안내 페이지</strong>로 가는 링크를<br>카톡·문자 등으로 넘겨 주시면 그걸로 충분합니다.</p>
+                        <p><strong>보호자 안내 페이지 링크</strong>를<br>카톡·문자 등으로 전달해 주시면 충분합니다.</p>
                         <ul>
-                            <li>특정 장례 업체를 정해 드실 필요는 없습니다.</li>
+                            <li>특정 장례 업체를 병원에서 정해 주실 필요는 없습니다.</li>
                             <li>장례에 대해 길게 설명해 드릴 필요도 없습니다.</li>
                         </ul>
                     </div>
@@ -387,7 +351,7 @@
                         <h3>레인보우나이츠가 이어가는 일</h3>
                         <p>링크 안에서 <strong>절차·비용·선택</strong>을 읽어 보실 수 있도록<br>정보를 정리해 두었습니다.</p>
                         <ul>
-                            <li>장례 업체를 대신 정해 드리거나,<br>대신 맡아 진행해 드리지는 않습니다.</li>
+                            <li>장례 업체를 대신 정해 드리거나,<br>진행을 대신 맡아 드리지는 않습니다.</li>
                             <li>최종 결정과 진행은 보호자분께서 직접 하십니다.</li>
                         </ul>
                     </div>
@@ -399,10 +363,10 @@
             <div class="shell">
                 <span class="kicker">말씀</span>
                 <h2 class="section-title" id="sec-how">현장에서는 이렇게 말씀하시면 됩니다</h2>
-                <p class="section-lead">꼭 같은 문장일 필요는 없습니다.<br>말씀하시는 방식은 상황에 맞게 달라도 괜찮습니다.</p>
+                <p class="section-lead">문장은 달라도 괜찮습니다.<br>링크 전달만 해 주시면 됩니다.</p>
                 <div class="flow-text">
-                    <p>보호자분께서 장례에 대해 여쭤보시면, <strong>보호자 안내 링크</strong>를 보내 주시면 됩니다. 아래에서 복사하거나, 카톡·문자로 넣어 보내실 수 있습니다.</p>
-                    <p>보호자분께서 링크를 열어 읽으신 뒤에는, 절차와 비용 안내는 <strong>레인보우나이츠</strong> 쪽에서 이어갑니다.</p>
+                    <p>보호자분께서 장례를 문의하시면, <strong>보호자 안내 링크</strong>를 보내 주세요.</p>
+                    <p>이후 절차와 비용 안내는 <strong>레인보우나이츠</strong>가 이어갑니다.</p>
                 </div>
             </div>
         </section>
@@ -411,22 +375,16 @@
             <div class="shell">
                 <span class="kicker">전달</span>
                 <h2 class="section-title" id="sec-cta">보호자분께 보내실 링크</h2>
-                <p class="section-lead">카톡·문자로 넣어 보내실 주소를 복사하거나,<br>미리 열어 보실 수 있습니다.</p>
+                <p class="section-lead">복사해 보내시거나, 미리 열어 보실 수 있습니다.</p>
                 <div class="cta-block">
                     <div class="btn-row">
                         <button type="button" class="btn btn-primary" id="btnCopyCustomerUrl">보호자 안내 링크 복사</button>
                         <a class="btn btn-secondary" id="btnOpenCustomer" href="/customer/">보호자 안내 열기</a>
                     </div>
-                    <p class="hint">복사되는 주소는 <strong>보호자 안내 페이지</strong>입니다.<br>이 병원용 안내 화면 주소가 아닙니다.</p>
                 </div>
             </div>
         </section>
     </main>
-
-    <div class="sticky-cta" role="region" aria-label="하단 안내">
-        <p>보호자분께 보내실 링크</p>
-        <button type="button" class="btn btn-primary" id="btnStickyCopyCustomer">보호자 안내 링크 복사</button>
-    </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -500,7 +458,7 @@
                         showToast('보호자 안내 주소를 복사했습니다.');
                     }).catch(function () {
                         track('rk_vet_link_copy', { target: 'customer', result: 'fail' });
-                        showToast('복사에 실패했습니다. 위쪽의 링크를 길게 눌러 복사해 주세요.');
+                        showToast('복사에 실패했습니다. 보호자 안내를 연 뒤 주소창에서 복사해 주세요.');
                     });
                 } else {
                     track('rk_vet_link_copy', { target: 'customer', result: 'unsupported' });
@@ -510,9 +468,6 @@
 
             document.getElementById('btnCopyCustomerUrl').addEventListener('click', function () {
                 copyCustomerUrl('main_copy_customer_link');
-            });
-            document.getElementById('btnStickyCopyCustomer').addEventListener('click', function () {
-                copyCustomerUrl('sticky_copy_customer_link');
             });
         })();
     </script>
