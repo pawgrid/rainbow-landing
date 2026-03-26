@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KQQNNVFM');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수의사·동물병원용 안내 | Rainbow Knights — Pawgrid</title>
+    <meta name="description" content="보호자 장례 문의 시 부담 없이 전달할 수 있는 안내 페이지입니다. 특정 업체 지정 없이 정보와 연결만 제공합니다.">
+    <link rel="canonical" href="https://www.pawgrid.io/vet/">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <style>
+        :root {
+            --bg: #f4f7fb;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --line: #e2e8f0;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-soft: #eff6ff;
+            --primary-border: #bfdbfe;
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", sans-serif;
+            color: var(--text);
+            line-height: 1.65;
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: calc(88px + var(--safe-bottom));
+        }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primary);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+        .wrap {
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--line);
+            padding: 0.875rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .brand {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+        .brand span { color: var(--muted); font-weight: 500; font-size: 0.8125rem; }
+        section {
+            padding: 2.5rem 0;
+        }
+        section + section { border-top: 1px solid var(--line); }
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.35;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+        @media (min-width: 640px) {
+            h1 { font-size: 1.75rem; }
+        }
+        .sub {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .sub p + p { margin-top: 0.75rem; }
+        h2 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .body-text {
+            font-size: 0.9375rem;
+            color: var(--text);
+            line-height: 1.75;
+        }
+        .body-text p + p { margin-top: 1rem; }
+        ul.steps {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        ul.steps li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9375rem;
+            color: var(--text);
+        }
+        ul.steps li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--primary);
+            opacity: 0.85;
+        }
+        .highlight-box {
+            background: var(--primary-soft);
+            border: 1px solid var(--primary-border);
+            border-radius: 12px;
+            padding: 1.25rem 1.25rem 1rem;
+            margin-top: 0.5rem;
+        }
+        .highlight-box ul {
+            list-style: none;
+        }
+        .highlight-box li {
+            font-size: 0.9375rem;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text);
+        }
+        .highlight-box li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 0.875rem;
+        }
+        .cta-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+        @media (min-width: 480px) {
+            .cta-row { flex-direction: row; flex-wrap: wrap; }
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.35rem;
+            padding: 0.875rem 1.25rem;
+            border-radius: 10px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 1px 2px rgba(37, 99, 235, 0.25);
+        }
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--line);
+        }
+        .btn-secondary:hover {
+            background: var(--bg);
+            transform: translateY(-1px);
+        }
+        .sticky-cta {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid var(--line);
+            padding: 0.875rem 1.25rem calc(0.875rem + var(--safe-bottom));
+            box-shadow: 0 -4px 24px rgba(15, 23, 42, 0.06);
+            animation: sticky-in 0.45s ease-out;
+        }
+        @keyframes sticky-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .sticky-cta p {
+            font-size: 0.8125rem;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .sticky-cta .btn {
+            width: 100%;
+            animation: cta-pulse 3s ease-in-out infinite;
+        }
+        @keyframes cta-pulse {
+            0%, 100% { box-shadow: 0 1px 2px rgba(37, 99, 235, 0.25); }
+            50% { box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35); }
+        }
+        .footnote {
+            font-size: 0.8125rem;
+            color: var(--muted);
+            margin-top: 1.5rem;
+            line-height: 1.6;
+        }
+        .toast {
+            position: fixed;
+            bottom: calc(5.5rem + var(--safe-bottom));
+            left: 50%;
+            transform: translateX(-50%) translateY(12px);
+            background: var(--text);
+            color: #fff;
+            padding: 0.65rem 1.1rem;
+            border-radius: 8px;
+            font-size: 0.8125rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s, transform 0.25s;
+            z-index: 1002;
+            max-width: calc(100vw - 2rem);
+            text-align: center;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQQNNVFM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="/">Rainbow Knights <span>· 병원 안내</span></a>
+            <a class="btn btn-secondary" style="padding:0.5rem 0.75rem;font-size:0.8125rem;font-weight:500;" href="/guide/">보호자 페이지</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="wrap" id="hero">
+            <h1>보호자 장례 문의, 어떻게 안내하고 계신가요?</h1>
+            <div class="sub">
+                <p>특정 업체를 지정하지 않고<br>보호자가 스스로 선택할 수 있도록<br>장례 정보와 연결을 제공합니다.</p>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>문제 공감</h2>
+            <div class="body-text">
+                <p>보호자가 장례를 문의하는 순간은 대부분 갑작스럽습니다.</p>
+                <p>비용 기준을 몰라 불안해하고<br>업체 선택을 병원에 의존하게 됩니다.</p>
+                <p>이 과정에서 병원은<br>설명 부담과 책임 리스크를 동시에 갖게 됩니다.</p>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>병원은 ‘안내’만 하면 됩니다</h2>
+            <ul class="steps">
+                <li>장례 절차 및 비용 구조 안내</li>
+                <li>지역 기반 장례 서비스 정보 제공</li>
+                <li>보호자가 직접 확인 후 진행</li>
+            </ul>
+        </section>
+
+        <section class="wrap">
+            <h2>운영 원칙</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li>병원은 특정 업체를 지정하지 않습니다</li>
+                    <li>모든 선택은 보호자가 직접 진행합니다</li>
+                    <li>서비스는 정보 제공 및 연결 역할만 수행합니다</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>이렇게 사용하세요</h2>
+            <ul class="steps">
+                <li>보호자가 장례를 문의하면</li>
+                <li>아래 링크를 전달해 주세요</li>
+                <li>보호자가 직접 확인 후 진행합니다</li>
+            </ul>
+        </section>
+
+        <section class="wrap" id="cta-section">
+            <h2>보호자 안내</h2>
+            <p class="body-text" style="margin-bottom:0.5rem;">아래에서 보호자용 안내 페이지를 열거나, 이 페이지 주소를 복사해 전달할 수 있습니다.</p>
+            <div class="cta-row">
+                <a class="btn btn-primary" id="btnOpenGuide" href="/guide/">👉 보호자 안내 페이지 열기</a>
+                <button type="button" class="btn btn-secondary" id="btnCopyUrl">👉 링크 복사하기</button>
+            </div>
+            <p class="footnote">본 페이지는 pawgrid.io 도메인에서 제공됩니다. 링크 복사 시 현재 주소가 클립보드에 저장됩니다.</p>
+        </section>
+    </main>
+
+    <div class="sticky-cta" role="region" aria-label="하단 안내">
+        <p>보호자에게 안내할 준비가 되셨나요?</p>
+        <a class="btn btn-primary" id="btnStickyGuide" href="/guide/">👉 안내 페이지 열기</a>
+    </div>
+
+    <div class="toast" id="toast" role="status">링크를 복사했습니다</div>
+
+    <script>
+        (function () {
+            var dataLayer = window.dataLayer = window.dataLayer || [];
+            function track(event, payload) {
+                dataLayer.push(Object.assign({ event: event }, payload || {}));
+            }
+
+            var scrollMarks = { p50: false, p90: false };
+            var timeMarks = { t10: false, t30: false };
+
+            function onScroll() {
+                var h = document.documentElement;
+                var scrollTop = h.scrollTop || document.body.scrollTop;
+                var max = (h.scrollHeight - h.clientHeight) || 1;
+                var p = (scrollTop / max) * 100;
+                var bar = document.getElementById('scrollProgress');
+                if (bar) bar.style.width = Math.min(100, p) + '%';
+                if (!scrollMarks.p50 && p >= 50) {
+                    scrollMarks.p50 = true;
+                    track('rk_vet_scroll', { depth_percent: 50 });
+                }
+                if (!scrollMarks.p90 && p >= 90) {
+                    scrollMarks.p90 = true;
+                    track('rk_vet_scroll', { depth_percent: 90 });
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            setTimeout(function () {
+                if (!timeMarks.t10) {
+                    timeMarks.t10 = true;
+                    track('rk_vet_engagement', { seconds: 10 });
+                }
+            }, 10000);
+            setTimeout(function () {
+                if (!timeMarks.t30) {
+                    timeMarks.t30 = true;
+                    track('rk_vet_engagement', { seconds: 30 });
+                }
+            }, 30000);
+
+            function bindCta(el, name) {
+                if (!el) return;
+                el.addEventListener('click', function () {
+                    track('rk_vet_cta_click', { cta: name });
+                });
+            }
+            bindCta(document.getElementById('btnOpenGuide'), 'main_open_guide');
+            bindCta(document.getElementById('btnStickyGuide'), 'sticky_open_guide');
+
+            document.getElementById('btnCopyUrl').addEventListener('click', function () {
+                track('rk_vet_cta_click', { cta: 'main_copy_link' });
+                var url = window.location.href;
+                var toast = document.getElementById('toast');
+                function showToast(msg) {
+                    toast.textContent = msg;
+                    toast.classList.add('show');
+                    setTimeout(function () { toast.classList.remove('show'); }, 2200);
+                }
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(url).then(function () {
+                        track('rk_vet_link_copy', { result: 'success' });
+                        showToast('링크를 복사했습니다');
+                    }).catch(function () {
+                        track('rk_vet_link_copy', { result: 'fail' });
+                        showToast('복사에 실패했습니다. 주소를 길게 눌러 복사해 주세요.');
+                    });
+                } else {
+                    track('rk_vet_link_copy', { result: 'unsupported' });
+                    showToast('이 브라우저에서는 주소창의 URL을 직접 복사해 주세요.');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

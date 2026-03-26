@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KQQNNVFM');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반려동물 장례, 미리 알아두기 | Rainbow Knights — Pawgrid</title>
+    <meta name="description" content="갑작스러운 순간에 당황하지 않도록 장례 절차와 비용 범위를 간단히 정리했습니다.">
+    <link rel="canonical" href="https://www.pawgrid.io/guide/">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <style>
+        :root {
+            --bg: #f4f7fb;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --line: #e2e8f0;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-soft: #eff6ff;
+            --card: #f8fafc;
+            --safe-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", sans-serif;
+            color: var(--text);
+            line-height: 1.65;
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: calc(88px + var(--safe-bottom));
+        }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primary);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+        .wrap {
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--line);
+            padding: 0.875rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .brand {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .brand span { color: var(--muted); font-weight: 500; font-size: 0.8125rem; }
+        section { padding: 2.5rem 0; }
+        section + section { border-top: 1px solid var(--line); }
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.35;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+        }
+        @media (min-width: 640px) { h1 { font-size: 1.75rem; } }
+        .sub { font-size: 1rem; color: var(--muted); line-height: 1.7; }
+        .sub p + p { margin-top: 0.75rem; }
+        h2 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .body-text { font-size: 0.9375rem; line-height: 1.75; }
+        .body-text p + p { margin-top: 1rem; }
+        .worry-list {
+            list-style: none;
+            margin-top: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--card);
+            border-radius: 12px;
+            border: 1px solid var(--line);
+        }
+        .worry-list li {
+            font-size: 0.9375rem;
+            padding: 0.4rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            color: var(--text);
+        }
+        .worry-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        ol.flow {
+            list-style: none;
+            counter-reset: step;
+            margin-top: 1rem;
+        }
+        ol.flow li {
+            counter-increment: step;
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9375rem;
+        }
+        ol.flow li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 50%;
+            background: var(--primary-soft);
+            color: var(--primary);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line);
+        }
+        .cost-card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-top: 0.5rem;
+        }
+        .cost-range {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+        .cost-note {
+            font-size: 0.8125rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        .soft-box {
+            font-size: 0.9375rem;
+            color: var(--text);
+            line-height: 1.75;
+            padding: 1.25rem;
+            background: var(--card);
+            border-radius: 12px;
+            border: 1px solid var(--line);
+        }
+        .cta-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+        @media (min-width: 480px) {
+            .cta-row { flex-direction: row; flex-wrap: wrap; }
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.35rem;
+            padding: 0.875rem 1.25rem;
+            border-radius: 10px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 1px 2px rgba(37, 99, 235, 0.25);
+        }
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: var(--muted);
+            border: 1px dashed var(--line);
+            font-weight: 500;
+        }
+        .btn-ghost:hover {
+            background: var(--surface);
+            color: var(--text);
+        }
+        .sticky-cta {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid var(--line);
+            padding: 0.875rem 1.25rem calc(0.875rem + var(--safe-bottom));
+            box-shadow: 0 -4px 24px rgba(15, 23, 42, 0.06);
+            animation: sticky-in 0.45s ease-out;
+        }
+        @keyframes sticky-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .sticky-cta p {
+            font-size: 0.8125rem;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .sticky-cta .btn {
+            width: 100%;
+            animation: cta-pulse 3s ease-in-out infinite;
+        }
+        @keyframes cta-pulse {
+            0%, 100% { box-shadow: 0 1px 2px rgba(37, 99, 235, 0.25); }
+            50% { box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35); }
+        }
+        .toast {
+            position: fixed;
+            bottom: calc(5.5rem + var(--safe-bottom));
+            left: 50%;
+            transform: translateX(-50%) translateY(12px);
+            background: var(--text);
+            color: #fff;
+            padding: 0.65rem 1.1rem;
+            border-radius: 8px;
+            font-size: 0.8125rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s, transform 0.25s;
+            z-index: 1002;
+            max-width: calc(100vw - 2rem);
+            text-align: center;
+            line-height: 1.5;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        .link-quiet {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.8125rem;
+        }
+        .link-quiet a { color: var(--muted); }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQQNNVFM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <header>
+        <div class="header-inner">
+            <a class="brand" href="/">Rainbow Knights <span>· 보호자 안내</span></a>
+            <a class="btn btn-ghost" style="padding:0.5rem 0.75rem;font-size:0.8125rem;" href="https://www.rainbowknights.io" id="headerServiceLink" target="_blank" rel="noopener noreferrer">서비스</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="wrap">
+            <h1>반려동물 장례, 갑작스럽게 준비해야 하는 순간이 옵니다</h1>
+            <div class="sub">
+                <p>미리 알아두면<br>당황하지 않고 선택할 수 있습니다.</p>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>문제 인식</h2>
+            <p class="body-text">많은 보호자들이 그 순간에</p>
+            <ul class="worry-list">
+                <li>무엇부터 해야 하는지</li>
+                <li>비용이 어느 정도인지</li>
+                <li>어디에 맡겨야 하는지</li>
+            </ul>
+            <p class="body-text" style="margin-top:1rem;">알지 못한 상태에서 결정을 하게 됩니다.</p>
+        </section>
+
+        <section class="wrap">
+            <h2>장례는 이렇게 진행됩니다</h2>
+            <ol class="flow">
+                <li>사망 확인</li>
+                <li>장례 방식 선택</li>
+                <li>업체 상담 및 진행</li>
+            </ol>
+        </section>
+
+        <section class="wrap">
+            <h2>장례 비용은 어느 정도일까요?</h2>
+            <div class="cost-card">
+                <p class="cost-range">약 40만 원 ~ 200만 원 범위에서 형성되는 경우가 많습니다</p>
+                <p class="cost-note">※ 지역, 반려동물 체급, 선택하신 절차(예: 개별 화장 여부 등)에 따라 실제 비용은 달라질 수 있습니다. 상담 시 견적을 확인하시기 바랍니다.</p>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>Rainbow Knights</h2>
+            <div class="soft-box">
+                Rainbow Knights는 장례 절차와 비용 정보를 정리하고, 필요할 때 스스로 확인할 수 있도록 제공합니다.
+            </div>
+        </section>
+
+        <section class="wrap" id="cta-section">
+            <h2>다음 단계</h2>
+            <div class="cta-row">
+                <a class="btn btn-primary" id="btnOpenService" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">👉 장례 정보 확인하기</a>
+                <button type="button" class="btn btn-ghost" id="btnLater">👉 나중에 다시 보기</button>
+            </div>
+            <p class="link-quiet"><a href="/guide.html">상세 장례 가이드(별도 페이지) →</a></p>
+        </section>
+    </main>
+
+    <div class="sticky-cta" role="region" aria-label="하단 안내">
+        <p>필요한 순간, 다시 찾을 수 있도록</p>
+        <a class="btn btn-primary" id="btnStickyService" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">👉 장례 서비스 확인하기</a>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <script>
+        (function () {
+            var dataLayer = window.dataLayer = window.dataLayer || [];
+            function track(event, payload) {
+                dataLayer.push(Object.assign({ event: event }, payload || {}));
+            }
+
+            var scrollMarks = { p50: false, p90: false };
+            var timeMarks = { t10: false, t30: false };
+
+            function onScroll() {
+                var h = document.documentElement;
+                var scrollTop = h.scrollTop || document.body.scrollTop;
+                var max = (h.scrollHeight - h.clientHeight) || 1;
+                var p = (scrollTop / max) * 100;
+                var bar = document.getElementById('scrollProgress');
+                if (bar) bar.style.width = Math.min(100, p) + '%';
+                if (!scrollMarks.p50 && p >= 50) {
+                    scrollMarks.p50 = true;
+                    track('rk_guide_scroll', { depth_percent: 50 });
+                }
+                if (!scrollMarks.p90 && p >= 90) {
+                    scrollMarks.p90 = true;
+                    track('rk_guide_scroll', { depth_percent: 90 });
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            setTimeout(function () {
+                if (!timeMarks.t10) { timeMarks.t10 = true; track('rk_guide_engagement', { seconds: 10 }); }
+            }, 10000);
+            setTimeout(function () {
+                if (!timeMarks.t30) { timeMarks.t30 = true; track('rk_guide_engagement', { seconds: 30 }); }
+            }, 30000);
+
+            function serviceClick(name) {
+                track('rk_guide_cta_click', { cta: name });
+                track('rk_guide_service_navigate', { source: name });
+            }
+            document.getElementById('btnOpenService').addEventListener('click', function () {
+                serviceClick('main_open_service');
+            });
+            document.getElementById('btnStickyService').addEventListener('click', function () {
+                serviceClick('sticky_open_service');
+            });
+            document.getElementById('headerServiceLink').addEventListener('click', function () {
+                serviceClick('header_open_service');
+            });
+
+            document.getElementById('btnLater').addEventListener('click', function () {
+                track('rk_guide_cta_click', { cta: 'bookmark_hint' });
+                var toast = document.getElementById('toast');
+                toast.textContent = '이 페이지를 브라우저 북마크에 저장해 두시면 나중에 다시 보실 수 있습니다.';
+                toast.classList.add('show');
+                setTimeout(function () { toast.classList.remove('show'); }, 3500);
+            });
+        })();
+    </script>
+</body>
+</html>
