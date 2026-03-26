@@ -439,11 +439,10 @@
             <div class="shell">
                 <span class="kicker">다음</span>
                 <h2 class="section-title" id="sec-next">필요할 때 바로 확인하세요</h2>
-                <p class="section-lead">아래에서 바로 확인하시거나, 나중에 다시 보실 수 있습니다.</p>
+                <p class="section-lead">아래 버튼으로 바로 확인하실 수 있습니다.</p>
                 <div class="cta-block">
                     <div class="btn-row">
                         <a class="btn btn-primary" id="btnOpenService" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">레인보우나이츠에서 더 보기</a>
-                        <button type="button" class="btn btn-quiet" id="btnLater">나중에 다시 볼게요</button>
                     </div>
                     <p class="cta-note">새 탭에서 레인보우나이츠 사이트가 열립니다.</p>
                     <p class="link-quiet"><a href="/guide.html">상세 장례 가이드(글)</a></p>
@@ -501,13 +500,6 @@
                 serviceClick('header_open_service');
             });
 
-            document.getElementById('btnLater').addEventListener('click', function () {
-                track('rk_customer_cta_click', { cta: 'bookmark_hint' });
-                var toast = document.getElementById('toast');
-                toast.textContent = '이 페이지를 북마크에 저장해 두시면, 필요할 때 다시 여실 수 있어요.';
-                toast.classList.add('show');
-                setTimeout(function () { toast.classList.remove('show'); }, 3500);
-            });
         })();
     </script>
 </body>
