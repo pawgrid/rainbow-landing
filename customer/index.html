@@ -128,15 +128,27 @@
             line-height: 1.8;
             margin-bottom: 1rem;
         }
-        .band { padding: 2.25rem 0; }
+        .band { padding: 2.5rem 0; }
         .band--alt { background: var(--bg-alt); }
+        .band--tight { padding-top: 2rem; padding-bottom: 2rem; }
+        .kicker {
+            display: block;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
         .section-title {
             font-size: 1.0625rem;
             font-weight: 700;
             letter-spacing: -0.02em;
             margin-bottom: 0.375rem;
+            margin-top: 0;
             color: var(--text);
         }
+        .kicker + .section-title { margin-top: 0; }
         .section-lead {
             font-size: 0.875rem;
             color: var(--muted);
@@ -176,27 +188,32 @@
             line-height: 1.65;
             color: var(--text);
         }
-        .flow-grid {
-            display: grid;
-            gap: 0.75rem;
-            margin-top: 0.25rem;
-        }
-        @media (min-width: 480px) {
-            .flow-grid { grid-template-columns: 1fr 1fr 1fr; gap: 0.625rem; }
-        }
-        .flow-card {
+        .flow-steps {
+            list-style: none;
+            counter-reset: fs;
+            margin-top: 0.5rem;
             background: var(--surface);
             border: 1px solid var(--line);
             border-radius: var(--radius);
-            padding: 1rem 0.875rem;
-            text-align: center;
+            padding: 0.25rem 1rem;
             box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
         }
-        .band--alt .flow-card { background: #fff; }
-        .flow-card .num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+        .band--alt .flow-steps { background: #fff; }
+        .flow-steps li {
+            counter-increment: fs;
+            display: flex;
+            gap: 0.875rem;
+            align-items: flex-start;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid var(--line);
+            font-size: 0.9375rem;
+            line-height: 1.55;
+            color: var(--text);
+        }
+        .flow-steps li:last-child { border-bottom: none; }
+        .flow-steps li::before {
+            content: counter(fs);
+            flex-shrink: 0;
             width: 1.625rem;
             height: 1.625rem;
             border-radius: 50%;
@@ -204,17 +221,10 @@
             color: var(--primary);
             font-size: 0.75rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        .flow-card p {
-            font-size: 0.875rem;
-            font-weight: 600;
-            line-height: 1.45;
-            letter-spacing: -0.02em;
-        }
-        @media (max-width: 479px) {
-            .flow-card { display: flex; align-items: center; gap: 0.75rem; text-align: left; padding: 0.875rem 1rem; }
-            .flow-card .num { margin-bottom: 0; flex-shrink: 0; }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.1rem;
         }
         .cost-card {
             background: var(--surface);
@@ -247,9 +257,9 @@
             box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
         }
         .band--alt .rk-box { background: #fff; }
-        .rk-box p + p { margin-top: 1rem; }
+        .rk-box p + p { margin-top: 0.875rem; }
         .rk-box .note {
-            margin-top: 1.125rem;
+            margin-top: 1rem;
             padding-top: 1rem;
             border-top: 1px solid var(--line);
             font-size: 0.875rem;
@@ -395,14 +405,15 @@
                 <div class="lead">
                     <p class="empathy">지금 이 글을 읽는 마음이 무겁다는 것,<br>저희도 잘 알고 있습니다.<br>천천히 읽어 주셔도 괜찮습니다.</p>
                     <p>지금 당장 결정하실 필요는 없습니다.<br>
-                    다만 흐름과 비용만 한 번 짚어 두시면,<br>
+                    흐름과 비용만 한 번 짚어 두시면,<br>
                     나중에 조금 덜 막막하실 수 있습니다.</p>
                 </div>
             </div>
         </div>
 
-        <section class="band band--alt" aria-labelledby="sec-when">
+        <section class="band band--alt band--tight" aria-labelledby="sec-when">
             <div class="shell">
+                <span class="kicker">막연함</span>
                 <h2 class="section-title" id="sec-when">그때가 되면, 머릿속이 하얗게 비실 수 있어요</h2>
                 <p class="section-lead">서두르지 않으셔도 됩니다.<br>많은 보호자분들이 비슷한 순간을 겪으십니다.</p>
                 <ul class="feel-list">
@@ -410,34 +421,26 @@
                     <li>비용이 어느 정도인지 감이 없어<br>더 답답합니다.</li>
                     <li>어디에 문의해야 할지<br>막연합니다.</li>
                 </ul>
-                <p class="body-after">이런 상태에서 급하게 결정하시는 분들이 많습니다.<br>
-                그래서 미리 글만 읽어 두시는 것만으로도<br>의미가 있습니다.</p>
+                <p class="body-after">그래서 아래 내용은<br>지금 다 외우실 필요 없습니다.<br>나중에 다시 찾아보실 수 있게 짚어 두는 용도입니다.</p>
             </div>
         </section>
 
         <section class="band" aria-labelledby="sec-flow">
             <div class="shell">
+                <span class="kicker">흐름</span>
                 <h2 class="section-title" id="sec-flow">보통 이런 순서로 진행됩니다</h2>
-                <p class="section-lead">병원과 장례를 맡기실 곳마다 조금씩 다를 수 있어,<br>큰 줄기만 짚어 드립니다.</p>
-                <div class="flow-grid">
-                    <div class="flow-card">
-                        <span class="num" aria-hidden="true">1</span>
-                        <p>사망 확인</p>
-                    </div>
-                    <div class="flow-card">
-                        <span class="num" aria-hidden="true">2</span>
-                        <p>장례 방식 정하기</p>
-                    </div>
-                    <div class="flow-card">
-                        <span class="num" aria-hidden="true">3</span>
-                        <p>상담 후 진행</p>
-                    </div>
-                </div>
+                <p class="section-lead">병원과 맡기실 곳마다 조금씩 다릅니다.<br>큰 줄기만 보시면 됩니다.</p>
+                <ol class="flow-steps">
+                    <li>사망 확인</li>
+                    <li>장례 방식 정하기</li>
+                    <li>상담 후 진행</li>
+                </ol>
             </div>
         </section>
 
         <section class="band band--alt" aria-labelledby="sec-cost">
             <div class="shell">
+                <span class="kicker">비용</span>
                 <h2 class="section-title" id="sec-cost">비용은 대략 어느 정도일까요?</h2>
                 <p class="section-lead">지역과 선택하시는 방식에 따라 차이가 큽니다.<br>아래는 참고용 범위입니다.</p>
                 <div class="cost-card">
@@ -449,19 +452,20 @@
 
         <section class="band" aria-labelledby="sec-rk">
             <div class="shell">
-                <h2 class="section-title" id="sec-rk">레인보우나이츠가 도와드리는 점</h2>
-                <p class="section-lead">정보를 읽는 것만으로도,<br>막연함이 조금은 가벼워질 수 있습니다.</p>
+                <span class="kicker">레인보우나이츠</span>
+                <h2 class="section-title" id="sec-rk">이 서비스로 무엇이 나아지나요</h2>
+                <p class="section-lead">슬픔 속에서 ‘알아야 할 것’을<br>조금씩 덜어내 드리고 싶습니다.</p>
                 <div class="rk-box">
-                    <p>절차와 비용이 글로 정리되어 있어,<br>머리가 하얗게 될 때 다시 읽어 보실 수 있습니다.</p>
-                    <p>지역과 상황에 맞는 내용을<br>한곳에서 살펴보실 수 있는 길을 열어 드립니다.</p>
-                    <p>누가 대신 정해 주는 것이 아니라,<br>보호자님께서 읽으시고 이어가실 수 있는 속도로 보실 수 있습니다.</p>
-                    <p class="note">의료 판단이나 특정 업체를 정해 드리지 않고,<br>부담 없이 먼저 읽어 보시기에 좋습니다.</p>
+                    <p>절차와 비용이 글로 정리되어 있어,<br>지금은 훑어보기만 하셔도 되고,<br>나중에 머리가 하얗게 될 때 다시 펼쳐 보실 수 있습니다.</p>
+                    <p>지역과 상황에 맞는 안내로 이어지며,<br>보호자님의 속도에 맞추어 읽고 결정하실 수 있습니다.</p>
+                    <p class="note">의료 판단이나 특정 업체를 정해 드리지는 않습니다.<br>대신 억지로 고르게 하지 않아,<br>처음부터 끝까지 부담을 덜 느끼실 수 있게 구성해 두었습니다.</p>
                 </div>
             </div>
         </section>
 
         <section class="band band--alt" id="cta-section" aria-labelledby="sec-next">
             <div class="shell">
+                <span class="kicker">다음</span>
                 <h2 class="section-title" id="sec-next">지금 하지 않으셔도 괜찮아요</h2>
                 <p class="section-lead">여유가 되실 때 천천히 읽어 보시고,<br>나중에 다시 찾으셔도 됩니다.</p>
                 <div class="cta-block">
@@ -469,8 +473,8 @@
                         <a class="btn btn-primary" id="btnOpenService" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">레인보우나이츠에서 더 보기</a>
                         <button type="button" class="btn btn-quiet" id="btnLater">나중에 다시 볼게요</button>
                     </div>
-                    <p class="cta-note">「더 보기」는 새 탭에서<br>레인보우나이츠 사이트가 열립니다.</p>
-                    <p class="link-quiet"><a href="/guide.html">글로 읽는 상세 장례 가이드</a></p>
+                    <p class="cta-note">새 탭에서 레인보우나이츠 사이트가 열립니다.</p>
+                    <p class="link-quiet"><a href="/guide.html">상세 장례 가이드(글)</a></p>
                 </div>
             </div>
         </section>

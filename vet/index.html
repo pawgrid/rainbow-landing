@@ -125,16 +125,76 @@
         }
         .lead p + p { margin-top: 0.875rem; }
         .band {
-            padding: 2.25rem 0;
+            padding: 2.5rem 0;
         }
         .band--alt { background: var(--bg-alt); }
+        .band--tight { padding-top: 2rem; padding-bottom: 2rem; }
+        .kicker {
+            display: block;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .split-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 0.25rem;
+        }
+        @media (min-width: 520px) {
+            .split-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+        }
+        .role-panel {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 1.125rem 1.125rem 1rem;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+        }
+        .band--alt .role-panel { background: #fff; }
+        .role-panel h3 {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.625rem;
+            letter-spacing: -0.02em;
+        }
+        .role-panel p, .role-panel ul {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+        .role-panel ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+        .role-panel li {
+            position: relative;
+            padding-left: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        .role-panel li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+        .role-panel strong { color: var(--text); font-weight: 600; }
         .section-title {
             font-size: 1.0625rem;
             font-weight: 700;
             letter-spacing: -0.02em;
             margin-bottom: 0.375rem;
+            margin-top: 0;
             color: var(--text);
         }
+        .kicker + .section-title { margin-top: 0; }
         .section-lead {
             font-size: 0.875rem;
             color: var(--muted);
@@ -153,52 +213,6 @@
             box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
         }
         .band--alt .card { background: #fff; }
-        .list-plain {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.625rem;
-        }
-        .list-plain li {
-            font-size: 0.9375rem;
-            padding-left: 1.25rem;
-            position: relative;
-            line-height: 1.6;
-        }
-        .list-plain li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.55em;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: var(--primary);
-            opacity: 0.85;
-        }
-        .promise-box {
-            background: var(--primary-soft);
-            border: 1px solid var(--primary-border);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.25rem 1rem;
-        }
-        .promise-box ul { list-style: none; }
-        .promise-box li {
-            font-size: 0.9375rem;
-            padding: 0.5rem 0 0.5rem 1.35rem;
-            position: relative;
-            line-height: 1.55;
-        }
-        .promise-box li::before {
-            content: "·";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1.25rem;
-            line-height: 1;
-            top: 0.45rem;
-        }
         .steps-flow {
             counter-reset: s;
             list-style: none;
@@ -357,21 +371,22 @@
             <div class="shell">
                 <h1 id="hero">보호자분께 장례를 문의받으셨을 때,<br>어떻게 말씀드리고 계신가요?</h1>
                 <div class="lead">
-                    <p>말 한마디가 부담스러울 수 있는 자리입니다.<br>
-                    레인보우나이츠는 특정 업체를 정해 드리지 않고,<br>
-                    절차와 비용을 이해하실 수 있는 안내와 연결만 드립니다.</p>
-                    <p>보호자분께서 스스로 확인하시고 선택하실 수 있도록<br>돕는 것이 저희의 목적입니다.</p>
+                    <p>말 한마디가 부담스러울 수 있는 자리입니다.</p>
+                    <p>레인보우나이츠는 병원 대신 업체를 정해 드리지 않습니다.<br>
+                    보호자분께 <strong>안내 링크를 전달</strong>해 주시면,<br>
+                    절차와 비용을 읽어 보시고 이어가실 수 있게 돕습니다.</p>
                 </div>
             </div>
         </div>
 
-        <section class="band band--alt" aria-labelledby="sec-situation">
+        <section class="band band--alt band--tight" aria-labelledby="sec-situation">
             <div class="shell">
+                <span class="kicker">현장</span>
                 <h2 class="section-title" id="sec-situation">진료실에서 자주 겹치는 일들</h2>
                 <p class="section-lead">갑작스러운 이별 직후에는<br>보호자분도, 병원에 계신 분들도 같은 시간을 보내고 계십니다.</p>
                 <div class="card-stack">
                     <div class="card">보호자분은 비용이 어느 정도인지 감이 없어<br>더 막막해지기 쉽습니다.</div>
-                    <div class="card">‘어디가 좋은가요’라는 질문에 답하려면,<br>병원 입장에서도 부담이 큽니다.</div>
+                    <div class="card">‘어디가 좋은가요’에 답하려면<br>병원 입장에서도 부담이 큽니다.</div>
                     <div class="card">설명을 길게 드리면 시간이 부족하고,<br>짧게 드리면 오해가 생길 수 있어 쉽지 않습니다.</div>
                 </div>
             </div>
@@ -379,52 +394,54 @@
 
         <section class="band" aria-labelledby="sec-role">
             <div class="shell">
-                <h2 class="section-title" id="sec-role">병원에서는 안내만 해 주셔도 됩니다</h2>
-                <p class="section-lead">무엇을 어떻게 진행하는지,<br>어디서 더 알아보실 수 있는지까지 안내해 주시면 충분합니다.</p>
-                <ul class="list-plain">
-                    <li>장례가 어떤 순서로 진행되는지,<br>비용은 대략 어떤 항목으로 나뉘는지</li>
-                    <li>지역과 상황에 맞는 정보를<br>스스로 살펴보실 수 있는 길</li>
-                    <li>최종 결정과 진행은<br>보호자분께서 직접 하시는 것</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="band band--alt" aria-labelledby="sec-promise">
-            <div class="shell">
-                <h2 class="section-title" id="sec-promise">함께 지키고 싶은 말씀</h2>
-                <p class="section-lead">레인보우나이츠는 병원을 대신해<br>결정을 내려 드리지 않습니다.</p>
-                <div class="promise-box">
-                    <ul>
-                        <li>병원에서 특정 장례 업체를<br>정해 드리지 않습니다.</li>
-                        <li>이후 절차와 선택은 모두<br>보호자분께서 직접 이어가십니다.</li>
-                        <li>저희 역할은 정보를 정리해 드리고,<br>필요하실 때 이어질 수 있게 돕는 것까지입니다.</li>
-                    </ul>
+                <span class="kicker">역할 나누기</span>
+                <h2 class="section-title" id="sec-role">병원은 링크만,<br>레인보우나이츠는 안내를 이어갑니다</h2>
+                <p class="section-lead">길게 설명하지 않으셔도 됩니다.<br>아래 두 가지만 구분해 주시면 됩니다.</p>
+                <div class="split-grid">
+                    <div class="role-panel">
+                        <h3>병원에서 하실 일</h3>
+                        <p><strong>보호자 안내 페이지</strong>로 가는 링크를<br>카톡·문자 등으로 넘겨 주시는 것까지입니다.</p>
+                        <ul>
+                            <li>특정 장례 업체를 정해 드실 필요는 없습니다.</li>
+                            <li>대신 장례를 길게 설명해 드릴 필요도 없습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="role-panel">
+                        <h3>레인보우나이츠가 이어가는 일</h3>
+                        <p>링크 안에서 <strong>절차·비용·선택</strong>을 읽어 보실 수 있게<br>정보를 정리해 두었습니다.</p>
+                        <ul>
+                            <li>의료 판단이나 업체 지정은 하지 않습니다.</li>
+                            <li>최종 결정과 진행은 보호자분께서 직접 하십니다.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="band" aria-labelledby="sec-how">
+        <section class="band band--alt" aria-labelledby="sec-how">
             <div class="shell">
-                <h2 class="section-title" id="sec-how">현장에서 이렇게 쓰시면 됩니다</h2>
-                <p class="section-lead">말로 다 설명하기 어려우실 때,<br>아래 순서만 기억해 주셔도 됩니다.</p>
+                <span class="kicker">순서</span>
+                <h2 class="section-title" id="sec-how">현장에서 이렇게만 기억해 주세요</h2>
+                <p class="section-lead">문장은 달라도 괜찮습니다.<br>흐름만 같으면 됩니다.</p>
                 <ol class="steps-flow">
-                    <li>보호자분께서 장례에 대해 여쭤보실 때</li>
-                    <li>이 페이지 또는 보호자 안내 링크를<br>카톡·문자 등으로 넘겨 주시고</li>
-                    <li>가셔서 천천히 읽어 보신 뒤,<br>필요하실 때 이어가시면 됩니다.</li>
+                    <li>보호자분께서 장례를 여쭤보실 때</li>
+                    <li>보호자 안내 링크를 보내 주신 뒤</li>
+                    <li>보호자분께서 링크를 열어 읽고,<br>필요하실 때 레인보우나이츠 쪽 안내로 이어가시면 됩니다.</li>
                 </ol>
             </div>
         </section>
 
-        <section class="band band--alt" id="cta-section" aria-labelledby="sec-cta">
+        <section class="band" id="cta-section" aria-labelledby="sec-cta">
             <div class="shell">
-                <h2 class="section-title" id="sec-cta">보호자분께 넘겨 주실 링크</h2>
-                <p class="section-lead">안내 페이지를 바로 여시거나,<br>이 화면 주소를 복사해 전달하실 수 있습니다.</p>
+                <span class="kicker">전달</span>
+                <h2 class="section-title" id="sec-cta">지금 바로 보내실 링크</h2>
+                <p class="section-lead">보호자 안내를 열거나,<br>이 화면 주소를 복사해 보내실 수 있습니다.</p>
                 <div class="cta-block">
                     <div class="btn-row">
-                        <a class="btn btn-primary" id="btnOpenCustomer" href="/customer/">보호자 안내 페이지 열기</a>
+                        <a class="btn btn-primary" id="btnOpenCustomer" href="/customer/">보호자 안내 열기</a>
                         <button type="button" class="btn btn-secondary" id="btnCopyUrl">이 페이지 주소 복사</button>
                     </div>
-                    <p class="hint">복사하시면 지금 보고 계신 주소(<strong>병원용 안내</strong>)가 클립보드에 담깁니다.<br>보호자분께는 <a href="/customer/">보호자 안내</a> 링크를 따로 보내셔도 됩니다.</p>
+                    <p class="hint"><strong>복사</strong>는 지금 보고 계신 <strong>병원용 페이지 주소</strong>가 담깁니다.<br>보호자분께는 위 <strong>보호자 안내</strong>를 보내 주시는 편이 알맞습니다.</p>
                 </div>
             </div>
         </section>
