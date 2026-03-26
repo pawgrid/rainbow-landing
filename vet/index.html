@@ -213,41 +213,18 @@
             box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
         }
         .band--alt .card { background: #fff; }
-        .steps-flow {
-            counter-reset: s;
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-        .steps-flow li {
-            counter-increment: s;
-            position: relative;
-            padding: 1rem 0 1rem 2.75rem;
-            border-left: 2px solid var(--line);
-            margin-left: 0.875rem;
+        .flow-text {
             font-size: 0.9375rem;
-            line-height: 1.55;
-        }
-        .steps-flow li:last-child { border-left-color: transparent; }
-        .steps-flow li::before {
-            content: counter(s);
-            position: absolute;
-            left: -0.875rem;
-            transform: translateX(-50%);
-            width: 1.75rem;
-            height: 1.75rem;
-            border-radius: 50%;
+            line-height: 1.75;
+            color: var(--text);
             background: var(--surface);
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            font-size: 0.75rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            top: 0.85rem;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 1.125rem 1.25rem;
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
         }
+        .band--alt .flow-text { background: #fff; }
+        .flow-text p + p { margin-top: 0.875rem; }
         .cta-block {
             background: var(--surface);
             border: 1px solid var(--line);
@@ -420,36 +397,35 @@
 
         <section class="band band--alt" aria-labelledby="sec-how">
             <div class="shell">
-                <span class="kicker">순서</span>
-                <h2 class="section-title" id="sec-how">현장에서 이렇게만 기억해 주세요</h2>
-                <p class="section-lead">문장은 달라도 괜찮습니다.<br>흐름만 같으면 됩니다.</p>
-                <ol class="steps-flow">
-                    <li>보호자분께서 장례를 여쭤보실 때</li>
-                    <li>보호자 안내 링크를 보내 주신 뒤</li>
-                    <li>보호자분께서 링크를 열어 읽고,<br>필요하실 때 레인보우나이츠 안내로 이어가시면 됩니다.</li>
-                </ol>
+                <span class="kicker">말씀</span>
+                <h2 class="section-title" id="sec-how">현장에서는 이렇게 말씀하시면 됩니다</h2>
+                <p class="section-lead">꼭 같은 문장일 필요는 없습니다.<br>말씀하시는 방식은 상황에 맞게 달라도 괜찮습니다.</p>
+                <div class="flow-text">
+                    <p>보호자분께서 장례에 대해 여쭤보시면, <strong>보호자 안내 링크</strong>를 보내 주시면 됩니다. 아래에서 복사하거나, 카톡·문자로 넣어 보내실 수 있습니다.</p>
+                    <p>보호자분께서 링크를 열어 읽으신 뒤에는, 절차와 비용 안내는 <strong>레인보우나이츠</strong> 쪽에서 이어갑니다.</p>
+                </div>
             </div>
         </section>
 
         <section class="band" id="cta-section" aria-labelledby="sec-cta">
             <div class="shell">
                 <span class="kicker">전달</span>
-                <h2 class="section-title" id="sec-cta">지금 바로 보내실 링크</h2>
-                <p class="section-lead">보호자 안내를 열거나,<br>이 화면 주소를 복사해 보내실 수 있습니다.</p>
+                <h2 class="section-title" id="sec-cta">보호자분께 보내실 링크</h2>
+                <p class="section-lead">카톡·문자로 넣어 보내실 주소를 복사하거나,<br>미리 열어 보실 수 있습니다.</p>
                 <div class="cta-block">
                     <div class="btn-row">
-                        <a class="btn btn-primary" id="btnOpenCustomer" href="/customer/">보호자 안내 열기</a>
-                        <button type="button" class="btn btn-secondary" id="btnCopyUrl">이 페이지 주소 복사</button>
+                        <button type="button" class="btn btn-primary" id="btnCopyCustomerUrl">보호자 안내 링크 복사</button>
+                        <a class="btn btn-secondary" id="btnOpenCustomer" href="/customer/">보호자 안내 열기</a>
                     </div>
-                    <p class="hint"><strong>복사</strong>를 누르시면 지금 보고 계신 <strong>병원용 페이지 주소</strong>가 담깁니다.<br>보호자분께는 <strong>보호자 안내</strong> 링크를 보내 주시는 것이 적절합니다.</p>
+                    <p class="hint">복사되는 주소는 <strong>보호자 안내 페이지</strong>입니다.<br>이 병원용 안내 화면 주소가 아닙니다.</p>
                 </div>
             </div>
         </section>
     </main>
 
     <div class="sticky-cta" role="region" aria-label="하단 안내">
-        <p>보호자분께 넘겨 주실 준비가 되셨다면</p>
-        <a class="btn btn-primary" id="btnStickyCustomer" href="/customer/">보호자 안내 열기</a>
+        <p>보호자분께 보내실 링크</p>
+        <button type="button" class="btn btn-primary" id="btnStickyCopyCustomer">보호자 안내 링크 복사</button>
     </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -504,11 +480,14 @@
                 });
             }
             bindCta(document.getElementById('btnOpenCustomer'), 'main_open_customer');
-            bindCta(document.getElementById('btnStickyCustomer'), 'sticky_open_customer');
 
-            document.getElementById('btnCopyUrl').addEventListener('click', function () {
-                track('rk_vet_cta_click', { cta: 'main_copy_link' });
-                var url = window.location.href;
+            function getCustomerPageUrl() {
+                return new URL('/customer/', window.location.origin).href;
+            }
+
+            function copyCustomerUrl(source) {
+                track('rk_vet_cta_click', { cta: source });
+                var url = getCustomerPageUrl();
                 var toast = document.getElementById('toast');
                 function showToast(msg) {
                     toast.textContent = msg;
@@ -517,16 +496,23 @@
                 }
                 if (navigator.clipboard && navigator.clipboard.writeText) {
                     navigator.clipboard.writeText(url).then(function () {
-                        track('rk_vet_link_copy', { result: 'success' });
-                        showToast('주소를 복사했습니다.');
+                        track('rk_vet_link_copy', { target: 'customer', result: 'success' });
+                        showToast('보호자 안내 주소를 복사했습니다.');
                     }).catch(function () {
-                        track('rk_vet_link_copy', { result: 'fail' });
-                        showToast('복사에 실패했습니다. 주소창의 링크를 길게 눌러 복사해 주세요.');
+                        track('rk_vet_link_copy', { target: 'customer', result: 'fail' });
+                        showToast('복사에 실패했습니다. 위쪽의 링크를 길게 눌러 복사해 주세요.');
                     });
                 } else {
-                    track('rk_vet_link_copy', { result: 'unsupported' });
-                    showToast('이 환경에서는 주소창의 URL을 직접 복사해 주세요.');
+                    track('rk_vet_link_copy', { target: 'customer', result: 'unsupported' });
+                    showToast('이 환경에서는 보호자 안내를 연 뒤 주소창에서 복사해 주세요.');
                 }
+            }
+
+            document.getElementById('btnCopyCustomerUrl').addEventListener('click', function () {
+                copyCustomerUrl('main_copy_customer_link');
+            });
+            document.getElementById('btnStickyCopyCustomer').addEventListener('click', function () {
+                copyCustomerUrl('sticky_copy_customer_link');
             });
         })();
     </script>
