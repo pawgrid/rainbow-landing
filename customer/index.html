@@ -188,43 +188,42 @@
             line-height: 1.65;
             color: var(--text);
         }
-        .flow-steps {
-            list-style: none;
-            counter-reset: fs;
+        .decision-help {
             margin-top: 0.5rem;
             background: var(--surface);
             border: 1px solid var(--line);
             border-radius: var(--radius);
-            padding: 0.25rem 1rem;
+            padding: 1rem 1.125rem;
             box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
         }
-        .band--alt .flow-steps { background: #fff; }
-        .flow-steps li {
-            counter-increment: fs;
-            display: flex;
-            gap: 0.875rem;
-            align-items: flex-start;
-            padding: 0.9rem 0;
-            border-bottom: 1px solid var(--line);
+        .band--alt .decision-help { background: #fff; }
+        .decision-help p {
             font-size: 0.9375rem;
             line-height: 1.55;
             color: var(--text);
         }
-        .flow-steps li:last-child { border-bottom: none; }
-        .flow-steps li::before {
-            content: counter(fs);
-            flex-shrink: 0;
-            width: 1.625rem;
-            height: 1.625rem;
+        .decision-help p + p { margin-top: 0.75rem; }
+        .decision-help ul {
+            list-style: none;
+            margin-top: 0.875rem;
+        }
+        .decision-help li {
+            position: relative;
+            padding-left: 1rem;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+        .decision-help li + li { margin-top: 0.625rem; }
+        .decision-help li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 5px;
+            height: 5px;
             border-radius: 50%;
-            background: var(--primary-soft);
-            color: var(--primary);
-            font-size: 0.75rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 0.1rem;
+            background: var(--primary);
         }
         .cost-card {
             background: var(--surface);
@@ -425,16 +424,19 @@
             </div>
         </section>
 
-        <section class="band" aria-labelledby="sec-flow">
+        <section class="band" aria-labelledby="sec-decision">
             <div class="shell">
-                <span class="kicker">흐름</span>
-                <h2 class="section-title" id="sec-flow">보통 이런 순서로 진행됩니다</h2>
-                <p class="section-lead">병원과 장례를 맡기실 곳마다 조금씩 다릅니다.<br>큰 흐름만 보시면 됩니다.</p>
-                <ol class="flow-steps">
-                    <li>사망 확인</li>
-                    <li>장례 방식 정하기</li>
-                    <li>상담 후 진행</li>
-                </ol>
+                <span class="kicker">결정 도움</span>
+                <h2 class="section-title" id="sec-decision">어려운 결정을 이렇게 도와드립니다</h2>
+                <p class="section-lead">무엇을 먼저 물어봐야 하는지, 어디를 비교해야 하는지부터<br>차분히 정리해 보실 수 있게 구성했습니다.</p>
+                <div class="decision-help">
+                    <p><strong>한 번에 결정하지 않으셔도 됩니다.</strong><br>레인보우나이츠는 꼭 확인해야 할 기준부터 먼저 보여 드립니다.</p>
+                    <ul>
+                        <li>현재 상황에서 먼저 확인할 항목(절차, 시간, 비용 범위)을 순서대로 안내합니다.</li>
+                        <li>업체마다 다른 선택지를 비교할 때 놓치기 쉬운 포인트를 쉬운 말로 정리해 둡니다.</li>
+                        <li>보호자님의 속도에 맞춰 읽고 결정하실 수 있도록, 재촉 없이 안내합니다.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
