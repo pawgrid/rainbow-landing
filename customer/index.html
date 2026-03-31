@@ -8,13 +8,13 @@
     })(window,document,'script','dataLayer','GTM-KQQNNVFM');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>반려동물 장례, 미리 알아두기 | 레인보우나이츠</title>
-    <meta name="description" content="갑작스러운 순간에 덜 막막하시도록, 레인보우나이츠가 장례 절차와 비용을 쉬운 말로 정리해 드립니다. 지금 꼭 결정하지 않으셔도 됩니다.">
-    <link rel="canonical" href="https://www.rainbowknights.io/customer/">
+    <title>반려동물 장례 안내 | 레인보우나이츠</title>
+    <meta name="description" content="장례는 한 번뿐인데, 한 곳만 보고 결정해도 괜찮을까요? Rainbow Knights에서 기준에 맞춰 비교하고 선택할 수 있습니다.">
+    <link rel="canonical" href="https://www.pawgrid.io/customer/">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.rainbowknights.io/customer/">
-    <meta property="og:title" content="반려동물 장례, 미리 알아두기 | 레인보우나이츠">
-    <meta property="og:description" content="절차와 비용을 미리 읽어 보실 수 있는 레인보우나이츠 안내입니다. 새 탭에서 이어질 수 있습니다.">
+    <meta property="og:url" content="https://www.pawgrid.io/customer/">
+    <meta property="og:title" content="반려동물 장례 안내 | 레인보우나이츠">
+    <meta property="og:description" content="기준에 맞춰 가격을 확인하고 여러 장례 업체를 비교할 수 있도록 제공합니다.">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <style>
         :root {
@@ -27,18 +27,22 @@
             --primary: #1d4ed8;
             --primary-hover: #1e40af;
             --primary-soft: #eff6ff;
+            --trust-bg: #eff6ff;
             --radius: 14px;
             --safe-bottom: env(safe-area-inset-bottom, 0px);
+            --block-gap: clamp(1.5rem, 4vw, 2rem);
+            --shell-x: clamp(1rem, 4vw, 1.25rem);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans KR", sans-serif;
+            font-size: 1rem;
             color: var(--text);
             line-height: 1.65;
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
-            padding-bottom: calc(1.25rem + var(--safe-bottom));
+            padding-bottom: calc(5.25rem + var(--safe-bottom));
         }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
@@ -54,7 +58,7 @@
             z-index: 1001;
             transition: width 0.08s linear;
         }
-        .shell { max-width: 36rem; margin: 0 auto; padding: 0 1.25rem; }
+        .shell { max-width: 36rem; margin: 0 auto; padding: 0 var(--shell-x); }
         header {
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(8px);
@@ -67,7 +71,7 @@
         .header-row {
             max-width: 36rem;
             margin: 0 auto;
-            padding: 0.75rem 1.25rem;
+            padding: 0.75rem var(--shell-x);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -101,12 +105,12 @@
         }
         .header-link:hover { background: var(--primary-soft); border-color: #bfdbfe; }
         .hero {
-            padding: 2.25rem 0 2.75rem;
+            padding: 2.25rem 0 var(--block-gap);
             background: linear-gradient(165deg, #fff 0%, #f8fafc 55%, #f1f5f9 100%);
             border-bottom: 1px solid var(--line);
         }
         @media (min-width: 640px) {
-            .hero { padding: 2.75rem 0 3.25rem; }
+            .hero { padding: 2.75rem 0 calc(var(--block-gap) + 0.25rem); }
         }
         h1 {
             font-size: 1.375rem;
@@ -116,154 +120,79 @@
             margin-bottom: 1rem;
         }
         @media (min-width: 640px) { h1 { font-size: 1.5rem; } }
-        .lead {
+        .hero-cta {
+            margin-top: 1.25rem;
+            opacity: 0;
+            animation: heroFade 0.4s ease forwards;
+        }
+        @keyframes heroFade {
+            to { opacity: 1; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-cta { opacity: 1; animation: none; }
+        }
+        .band {
+            padding: var(--block-gap) 0;
+        }
+        .band--alt { background: var(--bg-alt); }
+        .copy-block {
             font-size: 1rem;
-            color: var(--muted);
+            color: var(--text);
             line-height: 1.75;
         }
-        .lead p + p { margin-top: 0.875rem; }
-        .empathy {
-            font-size: 0.9375rem;
-            color: #475569;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        .band { padding: 2.5rem 0; }
-        .band--alt { background: var(--bg-alt); }
-        .band--tight { padding-top: 2rem; padding-bottom: 2rem; }
-        .kicker {
-            display: block;
-            font-size: 0.6875rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        .section-title {
-            font-size: 1.0625rem;
+        .copy-block p + p { margin-top: 0.75rem; }
+        .anchor-text {
+            font-size: 1.125rem;
             font-weight: 700;
+            line-height: 1.5;
+            color: var(--text);
             letter-spacing: -0.02em;
-            margin-bottom: 0.375rem;
-            margin-top: 0;
+        }
+        .service-list {
+            margin-top: 0.75rem;
+            font-size: 1rem;
+            line-height: 1.75;
             color: var(--text);
         }
-        .kicker + .section-title { margin-top: 0; }
-        .section-lead {
-            font-size: 0.875rem;
-            color: var(--muted);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        .feel-list {
+        .service-list p { margin-bottom: 0.5rem; }
+        .service-list ul {
             list-style: none;
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 1rem 1.125rem;
-            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+            margin: 0;
+            padding: 0;
         }
-        .band--alt .feel-list { background: #fff; }
-        .feel-list li {
-            font-size: 0.9375rem;
-            padding: 0.5rem 0 0.5rem 1.125rem;
-            position: relative;
-            line-height: 1.55;
-            color: var(--text);
-        }
-        .feel-list li + li { border-top: 1px solid var(--line); margin-top: 0.25rem; padding-top: 0.75rem; }
-        .feel-list li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.85rem;
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background: var(--primary);
-        }
-        .body-after {
-            font-size: 0.9375rem;
-            margin-top: 1rem;
-            line-height: 1.65;
-            color: var(--text);
-        }
-        .decision-help {
-            margin-top: 0.5rem;
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 1rem 1.125rem;
-            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
-        }
-        .band--alt .decision-help { background: #fff; }
-        .decision-help p {
-            font-size: 0.9375rem;
-            line-height: 1.55;
-            color: var(--text);
-        }
-        .decision-help p + p { margin-top: 0.75rem; }
-        .decision-help ul {
-            list-style: none;
-            margin-top: 0.875rem;
-        }
-        .decision-help li {
+        .service-list li {
             position: relative;
             padding-left: 1rem;
-            font-size: 0.9375rem;
-            line-height: 1.6;
-            color: var(--text);
+            margin-top: 0.5rem;
         }
-        .decision-help li + li { margin-top: 0.625rem; }
-        .decision-help li::before {
-            content: "";
+        .service-list li::before {
+            content: "–";
             position: absolute;
             left: 0;
-            top: 0.62em;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: var(--primary);
-        }
-        .cost-card {
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 1.25rem 1.125rem;
-            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
-        }
-        .band--alt .cost-card { background: #fff; }
-        .cost-range {
-            font-size: 1.0625rem;
-            font-weight: 700;
-            line-height: 1.45;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.625rem;
-        }
-        .cost-note {
-            font-size: 0.8125rem;
             color: var(--muted);
-            line-height: 1.6;
         }
-        .rk-box {
-            font-size: 0.9375rem;
-            line-height: 1.75;
+        .trust-box {
+            background: var(--trust-bg);
+            border: 1px solid #bfdbfe;
+            border-radius: var(--radius);
             padding: 1.25rem 1.25rem 1.125rem;
-            background: var(--surface);
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            border-left: 4px solid var(--primary);
-            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: var(--text);
         }
-        .band--alt .rk-box { background: #fff; }
-        .rk-box p + p { margin-top: 0.875rem; }
-        .rk-box .note {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--line);
-            font-size: 0.875rem;
-            color: var(--muted);
-            line-height: 1.65;
+        .trust-box p { margin-bottom: 0.65rem; }
+        .trust-box p:last-child { margin-bottom: 0; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.45s ease, transform 0.45s ease;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
         }
         .cta-block {
             background: var(--surface);
@@ -303,40 +232,23 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 14px rgba(29, 78, 216, 0.28);
         }
-        .btn-quiet {
-            background: transparent;
-            color: var(--muted);
-            border: 1px dashed var(--line);
-            font-weight: 500;
-            flex: 1;
-            min-width: min(100%, 12rem);
+        .sticky-cta {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid var(--line);
+            padding: 0.75rem var(--shell-x) calc(0.75rem + var(--safe-bottom));
+            box-shadow: 0 -8px 32px rgba(15, 23, 42, 0.08);
         }
-        .btn-quiet:hover {
-            background: var(--bg-alt);
-            color: var(--text);
-            border-style: solid;
-        }
-        .cta-note {
-            font-size: 0.75rem;
-            color: var(--muted);
-            margin-top: 0.875rem;
-            line-height: 1.5;
-            text-align: center;
-        }
-        .link-quiet {
-            display: block;
-            text-align: center;
-            margin-top: 1.25rem;
-            font-size: 0.8125rem;
-        }
-        .link-quiet a {
-            color: var(--muted);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
+        .sticky-cta .btn-primary { width: 100%; }
         .toast {
             position: fixed;
-            bottom: calc(1.25rem + var(--safe-bottom));
+            bottom: calc(5.25rem + var(--safe-bottom));
             left: 50%;
             transform: translateX(-50%) translateY(6px);
             background: var(--text);
@@ -372,42 +284,112 @@
     <main>
         <div class="hero">
             <div class="shell">
-                <h1>레인보우나이츠에서<br>지금 바로 확인할 수 있습니다</h1>
-                <div class="lead">
-                    <p class="empathy">복잡한 설명 대신, 결정에 필요한 정보만 빠르게 보실 수 있게 정리했습니다.</p>
+                <h1>장례는 한 번뿐인데<br>한 곳만 보고 결정해도 괜찮을까요?</h1>
+                <p class="copy-block" style="margin-top: 1rem;">한 번은 비교해보고 결정하셔도 늦지 않습니다</p>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" id="btnHeroCta" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">장례 정보 확인하기</a>
                 </div>
             </div>
         </div>
 
-        <section class="band band--alt" aria-labelledby="sec-decision">
+        <section class="band band--alt reveal" aria-labelledby="sec-empathy">
             <div class="shell">
-                <span class="kicker">서비스 안내</span>
-                <h2 class="section-title" id="sec-decision">레인보우나이츠에서 바로 확인되는 내용</h2>
-                <div class="decision-help">
+                <div class="copy-block" id="sec-empathy">
+                    <p>장례를 준비하는 순간은 갑작스럽고<br>대부분은 처음 겪는 일입니다</p>
+                    <p>그래서 많은 보호자들이<br>안내받은 곳을 그대로 선택하게 됩니다</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="band reveal" aria-labelledby="sec-anchor1">
+            <div class="shell">
+                <p class="anchor-text" id="sec-anchor1">그대로 결정하는 경우가 많습니다</p>
+            </div>
+        </section>
+
+        <section class="band band--alt reveal" aria-labelledby="sec-structure">
+            <div class="shell">
+                <div class="copy-block" id="sec-structure">
+                    <p>이 과정에서<br>업체 연결 과정에 소개비가 포함되는 경우도 있습니다</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="band reveal" aria-labelledby="sec-anchor2">
+            <div class="shell">
+                <p class="anchor-text" id="sec-anchor2">그래서 판단이 어렵습니다</p>
+            </div>
+        </section>
+
+        <section class="band band--alt reveal" aria-labelledby="sec-problem">
+            <div class="shell">
+                <div class="copy-block" id="sec-problem">
+                    <p>장례 비용은<br>기준 무게와 포함 서비스에 따라 달라지기 때문에<br>한 곳만으로는 판단하기 어렵습니다</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="band reveal" aria-labelledby="sec-solution">
+            <div class="shell">
+                <div class="copy-block" id="sec-solution">
+                    <p>같은 조건이라면<br>비교해보고 선택하는 것이<br>더 합리적인 결정일 수 있습니다</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="band band--alt reveal" aria-labelledby="sec-anchor3">
+            <div class="shell">
+                <p class="anchor-text" id="sec-anchor3">비교 기준을 정리했습니다</p>
+            </div>
+        </section>
+
+        <section class="band reveal" aria-labelledby="sec-service">
+            <div class="shell">
+                <div class="service-list" id="sec-service">
+                    <p>Rainbow Knights는</p>
                     <ul>
-                        <li>상황별 진행 순서와 준비 항목</li>
-                        <li>비용이 달라지는 기준과 예상 범위</li>
-                        <li>상담 전에 체크할 질문 목록</li>
-                        <li>지역과 상황에 맞는 안내 페이지 연결</li>
+                        <li>기준에 맞춰 가격을 확인하고</li>
+                        <li>여러 장례 업체를 비교할 수 있도록 제공합니다</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section class="band band--alt" id="cta-section" aria-labelledby="sec-next">
+        <section class="band band--alt reveal" aria-labelledby="sec-trust">
             <div class="shell">
-                <span class="kicker">다음</span>
-                <h2 class="section-title" id="sec-next">지금 바로 확인해 보세요</h2>
-                <p class="section-lead">아래 버튼을 누르면 바로 이어서 볼 수 있습니다.</p>
+                <div class="trust-box" id="sec-trust">
+                    <p>✔ 특정 업체를 추천하지 않습니다</p>
+                    <p>✔ 기준에 맞는 장례 업체 정보를 제공합니다</p>
+                    <p>✔ 보호자가 직접 비교하고 선택할 수 있습니다</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="band reveal" aria-labelledby="sec-emotion">
+            <div class="shell">
+                <div class="copy-block" id="sec-emotion">
+                    <p>중요한 순간일수록<br>선택은 보호자의 기준이어야 합니다</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="band band--alt reveal" id="cta-section" aria-labelledby="sec-cta">
+            <div class="shell">
+                <div class="copy-block" style="margin-bottom: 1rem;">
+                    <p>지금 확인해보세요<br>선택은 그 다음이어도 됩니다</p>
+                </div>
                 <div class="cta-block">
                     <div class="btn-row">
-                        <a class="btn btn-primary" id="btnOpenService" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">레인보우나이츠에서 확인하기</a>
+                        <a class="btn btn-primary" id="btnOpenService" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">장례 서비스 확인하기</a>
                     </div>
-                    <p class="cta-note">새 탭에서 레인보우나이츠 사이트가 열립니다.</p>
                 </div>
             </div>
         </section>
     </main>
+
+    <div class="sticky-cta" role="region" aria-label="하단 안내">
+        <a class="btn btn-primary" id="btnStickyCta" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">장례 정보 확인하기</a>
+    </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -447,17 +429,45 @@
                 if (!timeMarks.t30) { timeMarks.t30 = true; track('rk_customer_engagement', { seconds: 30 }); }
             }, 30000);
 
-            function serviceClick(name) {
-                track('rk_customer_cta_click', { cta: name });
-                track('rk_customer_service_navigate', { source: name });
+            function ctaClick(id, name) {
+                track('rk_customer_cta_click', { cta: name, cta_id: id });
             }
+            function externalLink(source) {
+                track('rk_customer_external_link', { source: source, url: 'https://www.rainbowknights.io' });
+                track('rk_customer_service_navigate', { source: source });
+            }
+
+            document.getElementById('btnHeroCta').addEventListener('click', function () {
+                ctaClick('btnHeroCta', 'hero_funeral_info');
+                externalLink('hero_funeral_info');
+            });
             document.getElementById('btnOpenService').addEventListener('click', function () {
-                serviceClick('main_open_service');
+                ctaClick('btnOpenService', 'footer_funeral_service');
+                externalLink('footer_funeral_service');
+            });
+            document.getElementById('btnStickyCta').addEventListener('click', function () {
+                ctaClick('btnStickyCta', 'sticky_funeral_info');
+                externalLink('sticky_funeral_info');
             });
             document.getElementById('headerServiceLink').addEventListener('click', function () {
-                serviceClick('header_open_service');
+                ctaClick('headerServiceLink', 'header_detail');
+                externalLink('header_detail');
             });
 
+            var reveals = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+                reveals.forEach(function (el) { io.observe(el); });
+            } else {
+                reveals.forEach(function (el) { el.classList.add('is-visible'); });
+            }
         })();
     </script>
 </body>
