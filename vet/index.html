@@ -28,12 +28,10 @@
             --primary: #1e293b;
             --primary-hover: #0f172a;
             --primary-soft: #f1f5f9;
-            --primary-muted: rgba(15, 23, 42, 0.06);
             --trust-bg: #f4f4f5;
             --radius: 12px;
             --radius-lg: 16px;
             --safe-bottom: env(safe-area-inset-bottom, 0px);
-            --section-y: clamp(2rem, 5.5vw, 2.75rem);
             --shell-x: clamp(1.125rem, 4vw, 1.5rem);
             --measure: 26rem;
         }
@@ -111,14 +109,9 @@
         }
         .header-link:hover { background: var(--primary-soft); border-color: var(--line); }
         .hero {
-            padding: 2.75rem 0 var(--section-y);
-            background:
-                radial-gradient(ellipse 140% 90% at 50% -30%, var(--primary-muted), transparent 55%),
-                var(--surface);
-            border-bottom: 1px solid var(--line-soft);
-        }
-        @media (min-width: 640px) {
-            .hero { padding: 3.25rem 0 calc(var(--section-y) + 0.35rem); }
+            padding: 2.5rem 0 2rem;
+            background: var(--surface);
+            border-bottom: 1px solid var(--line);
         }
         h1 {
             font-size: 1.5rem;
@@ -131,7 +124,7 @@
         }
         @media (min-width: 640px) { h1 { font-size: 1.625rem; } }
         .band {
-            padding: var(--section-y) 0;
+            padding: 2rem 0;
             background: transparent;
         }
         .copy-block {
@@ -140,38 +133,21 @@
             line-height: 1.75;
             max-width: var(--measure);
         }
-        .copy-block p + p { margin-top: 1.05rem; }
+        .copy-block p + p { margin-top: 1em; }
         .anchor-text {
-            font-size: 1.0625rem;
+            font-size: 1rem;
             font-weight: 700;
-            line-height: 1.55;
+            line-height: 1.65;
             color: var(--text);
-            letter-spacing: -0.03em;
-            text-align: left;
             max-width: var(--measure);
             margin: 0;
-            padding: 0.65rem 0 0.65rem 1rem;
-            border-left: 3px solid var(--primary);
-            background: linear-gradient(90deg, var(--primary-soft) 0%, transparent 100%);
-        }
-        .reveal {
-            opacity: 0;
-            transform: translateY(8px);
-            transition: opacity 0.45s ease, transform 0.45s ease;
-        }
-        .reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .reveal { opacity: 1; transform: none; transition: none; }
         }
         .cta-block {
             background: var(--surface);
             border: 1px solid var(--line);
             border-radius: var(--radius-lg);
             padding: 1.5rem 1.35rem;
-            box-shadow: 0 4px 24px rgba(15, 23, 42, 0.07);
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
             max-width: var(--measure);
             margin-left: 0;
             margin-right: 0;
@@ -193,7 +169,7 @@
             border: none;
             cursor: pointer;
             font-family: inherit;
-            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s;
+            transition: box-shadow 0.15s ease, background 0.15s ease;
         }
         .btn-primary {
             background: linear-gradient(180deg, #334155 0%, var(--primary) 100%);
@@ -204,8 +180,7 @@
         }
         .btn-primary:hover {
             background: var(--primary-hover);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.22);
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.18);
         }
         .sticky-cta {
             position: fixed;
@@ -218,7 +193,7 @@
             -webkit-backdrop-filter: blur(16px);
             border-top: 1px solid var(--line-soft);
             padding: 0.875rem var(--shell-x) calc(0.875rem + var(--safe-bottom));
-            box-shadow: 0 -12px 40px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 -2px 8px rgba(15, 23, 42, 0.06);
         }
         .sticky-cta .shell {
             max-width: 28rem;
@@ -275,7 +250,7 @@
             </div>
         </div>
 
-        <section class="band reveal" aria-labelledby="sec-problem">
+        <section class="band" aria-labelledby="sec-problem">
             <div class="shell">
                 <div class="copy-block" id="sec-problem">
                     <p>보호자는 장례를 처음 겪는 경우가 많고<br>비용이나 기준을 알지 못한 상태에서<br>결정을 하게 됩니다</p>
@@ -283,13 +258,13 @@
             </div>
         </section>
 
-        <section class="band reveal" aria-labelledby="sec-anchor1">
+        <section class="band" aria-labelledby="sec-anchor1">
             <div class="shell">
                 <p class="anchor-text" id="sec-anchor1">안내만으로 충분합니다</p>
             </div>
         </section>
 
-        <section class="band reveal" aria-labelledby="sec-solve">
+        <section class="band" aria-labelledby="sec-solve">
             <div class="shell">
                 <div class="copy-block" id="sec-solve">
                     <p>특정 업체를 추천하지 않고<br>보호자가 직접 확인하고 선택할 수 있도록<br>저희 서비스를 안내만 해주셔도 됩니다</p>
@@ -297,13 +272,13 @@
             </div>
         </section>
 
-        <section class="band reveal" aria-labelledby="sec-anchor2">
+        <section class="band" aria-labelledby="sec-anchor2">
             <div class="shell">
                 <p class="anchor-text" id="sec-anchor2">비교 후 선택할 수 있습니다</p>
             </div>
         </section>
 
-        <section class="band reveal" aria-labelledby="sec-explain">
+        <section class="band" aria-labelledby="sec-explain">
             <div class="shell">
                 <div class="copy-block" id="sec-explain">
                     <p>여러 장례 업체 정보를 기준에 맞춰 제공하며<br>보호자가 직접 비교 후 선택할 수 있습니다</p>
@@ -311,7 +286,7 @@
             </div>
         </section>
 
-        <section class="band reveal" aria-labelledby="sec-how">
+        <section class="band" aria-labelledby="sec-how">
             <div class="shell">
                 <div class="copy-block" id="sec-how">
                     <p>보호자가 장례를 문의하면<br>아래 링크를 전달해 주세요</p>
@@ -320,7 +295,7 @@
             </div>
         </section>
 
-        <section class="band reveal" id="cta-section" aria-labelledby="sec-cta">
+        <section class="band" id="cta-section" aria-labelledby="sec-cta">
             <div class="shell">
                 <div class="cta-block">
                     <div class="btn-row">
@@ -420,21 +395,6 @@
             }
 
             document.getElementById('btnCopyUrl').addEventListener('click', copyCustomerUrl);
-
-            var reveals = document.querySelectorAll('.reveal');
-            if ('IntersectionObserver' in window) {
-                var io = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            io.unobserve(entry.target);
-                        }
-                    });
-                }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-                reveals.forEach(function (el) { io.observe(el); });
-            } else {
-                reveals.forEach(function (el) { el.classList.add('is-visible'); });
-            }
         })();
     </script>
 </body>
