@@ -18,19 +18,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <style>
         :root {
-            --bg: #f8fafc;
-            --bg-alt: #f1f5f9;
+            --bg: #ffffff;
             --surface: #ffffff;
             --text: #0f172a;
             --muted: #64748b;
             --line: #e2e8f0;
+            --line-soft: #f1f5f9;
             --primary: #1d4ed8;
             --primary-hover: #1e40af;
             --primary-soft: #eff6ff;
-            --trust-bg: #eff6ff;
+            --trust-bg: #ffffff;
             --radius: 14px;
             --safe-bottom: env(safe-area-inset-bottom, 0px);
-            --block-gap: clamp(1.5rem, 4vw, 2rem);
+            --section-y: clamp(1.75rem, 5vw, 2.5rem);
             --shell-x: clamp(1rem, 4vw, 1.25rem);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,6 +43,9 @@
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
             padding-bottom: calc(5.25rem + var(--safe-bottom));
+        }
+        main {
+            background: var(--bg);
         }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
@@ -105,19 +108,20 @@
         }
         .header-link:hover { background: var(--primary-soft); border-color: #bfdbfe; }
         .hero {
-            padding: 2.25rem 0 var(--block-gap);
-            background: linear-gradient(165deg, #fff 0%, #f8fafc 55%, #f1f5f9 100%);
-            border-bottom: 1px solid var(--line);
+            padding: 2.5rem 0 var(--section-y);
+            background: var(--bg);
+            border-bottom: 1px solid var(--line-soft);
         }
         @media (min-width: 640px) {
-            .hero { padding: 2.75rem 0 calc(var(--block-gap) + 0.25rem); }
+            .hero { padding: 3rem 0 calc(var(--section-y) + 0.25rem); }
         }
         h1 {
             font-size: 1.375rem;
             font-weight: 700;
             line-height: 1.38;
             letter-spacing: -0.035em;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
+            max-width: 22em;
         }
         @media (min-width: 640px) { h1 { font-size: 1.5rem; } }
         .hero-cta {
@@ -131,30 +135,53 @@
         @media (prefers-reduced-motion: reduce) {
             .hero-cta { opacity: 1; animation: none; }
         }
-        .band {
-            padding: var(--block-gap) 0;
+        .hero-sub {
+            margin-top: 1rem;
+            max-width: 26rem;
         }
-        .band--alt { background: var(--bg-alt); }
+        .band {
+            padding: var(--section-y) 0;
+            background: var(--bg);
+        }
+        main > section.band {
+            border-top: 1px solid var(--line-soft);
+        }
+        main > section.band:first-of-type {
+            border-top: none;
+        }
         .copy-block {
             font-size: 1rem;
             color: var(--text);
             line-height: 1.75;
+            max-width: 26rem;
         }
-        .copy-block p + p { margin-top: 0.75rem; }
+        .copy-block p + p { margin-top: 1rem; }
         .anchor-text {
             font-size: 1.125rem;
             font-weight: 700;
             line-height: 1.5;
             color: var(--text);
             letter-spacing: -0.02em;
+            text-align: center;
+            max-width: 22rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0.25rem 0 0.125rem;
         }
         .service-list {
-            margin-top: 0.75rem;
+            margin-top: 0.5rem;
+            margin-left: auto;
+            margin-right: auto;
             font-size: 1rem;
             line-height: 1.75;
             color: var(--text);
+            max-width: 26rem;
+            padding: 1.125rem 1.125rem 1.25rem;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--bg);
         }
-        .service-list p { margin-bottom: 0.5rem; }
+        .service-list p { margin-bottom: 0.625rem; }
         .service-list ul {
             list-style: none;
             margin: 0;
@@ -173,12 +200,16 @@
         }
         .trust-box {
             background: var(--trust-bg);
-            border: 1px solid #bfdbfe;
+            border: 1px solid var(--line);
             border-radius: var(--radius);
-            padding: 1.25rem 1.25rem 1.125rem;
+            padding: 1.35rem 1.25rem 1.25rem;
             font-size: 0.9375rem;
             line-height: 1.7;
             color: var(--text);
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+            max-width: 26rem;
+            margin-left: auto;
+            margin-right: auto;
         }
         .trust-row {
             display: flex;
@@ -211,7 +242,16 @@
             border: 1px solid var(--line);
             border-radius: var(--radius);
             padding: 1.5rem 1.25rem;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+            max-width: 26rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-lead {
+            max-width: 26rem;
+            margin-bottom: 1.125rem;
+            margin-left: auto;
+            margin-right: auto;
         }
         .btn-row { display: flex; flex-direction: column; gap: 0.625rem; margin-top: 1rem; }
         @media (min-width: 420px) {
@@ -297,14 +337,14 @@
         <div class="hero">
             <div class="shell">
                 <h1>장례는 한 번뿐인데<br>한 곳만 보고 결정해도 괜찮을까요?</h1>
-                <p class="copy-block" style="margin-top: 1rem;">한 번은 비교해보고 결정하셔도 늦지 않습니다</p>
+                <p class="copy-block hero-sub">한 번은 비교해보고 결정하셔도 늦지 않습니다</p>
                 <div class="hero-cta">
                     <a class="btn btn-primary" id="btnHeroCta" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">장례 정보 확인하기</a>
                 </div>
             </div>
         </div>
 
-        <section class="band band--alt reveal" aria-labelledby="sec-empathy">
+        <section class="band reveal" aria-labelledby="sec-empathy">
             <div class="shell">
                 <div class="copy-block" id="sec-empathy">
                     <p>장례를 준비하는 순간은 갑작스럽고<br>대부분은 처음 겪는 일입니다</p>
@@ -319,7 +359,7 @@
             </div>
         </section>
 
-        <section class="band band--alt reveal" aria-labelledby="sec-structure">
+        <section class="band reveal" aria-labelledby="sec-structure">
             <div class="shell">
                 <div class="copy-block" id="sec-structure">
                     <p>이 과정에서<br>업체 연결 과정에 소개비가 포함되는 경우도 있습니다</p>
@@ -333,7 +373,7 @@
             </div>
         </section>
 
-        <section class="band band--alt reveal" aria-labelledby="sec-problem">
+        <section class="band reveal" aria-labelledby="sec-problem">
             <div class="shell">
                 <div class="copy-block" id="sec-problem">
                     <p>장례 비용은<br>기준 무게와 포함 서비스에 따라 달라지기 때문에<br>한 곳만으로는 판단하기 어렵습니다</p>
@@ -349,7 +389,7 @@
             </div>
         </section>
 
-        <section class="band band--alt reveal" aria-labelledby="sec-anchor3">
+        <section class="band reveal" aria-labelledby="sec-anchor3">
             <div class="shell">
                 <p class="anchor-text" id="sec-anchor3">비교 기준을 정리했습니다</p>
             </div>
@@ -367,7 +407,7 @@
             </div>
         </section>
 
-        <section class="band band--alt reveal" aria-labelledby="sec-trust">
+        <section class="band reveal" aria-labelledby="sec-trust">
             <div class="shell">
                 <div class="trust-box" id="sec-trust">
                     <div class="trust-row">
@@ -403,9 +443,9 @@
             </div>
         </section>
 
-        <section class="band band--alt reveal" id="cta-section" aria-labelledby="sec-cta">
+        <section class="band reveal" id="cta-section" aria-labelledby="sec-cta">
             <div class="shell">
-                <div class="copy-block" style="margin-bottom: 1rem;">
+                <div class="copy-block cta-lead">
                     <p>지금 확인해보세요<br>선택은 그 다음이어도 됩니다</p>
                 </div>
                 <div class="cta-block">
