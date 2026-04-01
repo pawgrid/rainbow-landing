@@ -45,7 +45,7 @@
             letter-spacing: -0.01em;
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
-            padding-bottom: calc(5.25rem + var(--safe-bottom));
+            padding-bottom: calc(1.25rem + var(--safe-bottom));
         }
         main {
             background: var(--bg);
@@ -140,12 +140,6 @@
         }
         .hero-cta .btn-primary {
             width: 100%;
-        }
-        .hero-sub {
-            margin-top: 0.75rem;
-            max-width: var(--measure);
-            color: var(--text);
-            opacity: 0.92;
         }
         .band {
             padding: 2rem 0;
@@ -272,27 +266,9 @@
             background: var(--primary-hover);
             box-shadow: 0 2px 10px rgba(15, 23, 42, 0.18);
         }
-        .sticky-cta {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 999;
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-top: 1px solid var(--line-soft);
-            padding: 0.875rem var(--shell-x) calc(0.875rem + var(--safe-bottom));
-            box-shadow: 0 -2px 8px rgba(15, 23, 42, 0.06);
-        }
-        .sticky-cta .shell {
-            max-width: 28rem;
-            margin: 0 auto;
-        }
-        .sticky-cta .btn-primary { width: 100%; }
         .toast {
             position: fixed;
-            bottom: calc(5.25rem + var(--safe-bottom));
+            bottom: calc(1.25rem + var(--safe-bottom));
             left: 50%;
             transform: translateX(-50%) translateY(6px);
             background: var(--text);
@@ -320,7 +296,7 @@
 
     <header>
         <div class="header-row">
-            <a class="brand" href="/">레인보우나이츠<small>보호자님 안내</small></a>
+            <a class="brand" href="/">레인보우나이츠<small>보호자 안내</small></a>
             <a class="header-link" href="https://www.rainbowknights.io" id="headerServiceLink" target="_blank" rel="noopener noreferrer">자세히 보기</a>
         </div>
     </header>
@@ -328,9 +304,8 @@
     <main>
         <div class="hero">
             <div class="shell">
-                <h1>지금 마음이 힘드실 수 있습니다.<br>장례는 한 번뿐인데, 한 곳만 보고 결정해도 괜찮을까요?</h1>
-                <p class="hero-slogan">아이의 마지막 길에서 의미 있는 선택을 함께하는 동물병원과, 레인보우나이츠가 보호자님과 함께합니다.</p>
-                <p class="copy-block hero-sub">서두르지 않으셔도 됩니다. 한 번 살펴보신 뒤 결정하셔도 늦지 않습니다</p>
+                <h1>장례는 한 번뿐인데,<br>한 곳만 보고 결정해도 괜찮을까요?</h1>
+                <p class="hero-slogan">아이의 마지막 길에서 동물병원과 레인보우나이츠가 의미있는 선택을 함께합니다.</p>
                 <div class="hero-cta">
                     <a class="btn btn-primary" id="btnHeroCta" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">장례 정보 확인하기</a>
                 </div>
@@ -340,7 +315,8 @@
         <section class="band" aria-labelledby="sec-empathy">
             <div class="shell">
                 <div class="copy-block" id="sec-empathy">
-                    <p>이별을 맞이하시는 지금은 마음이 많이 힘드실 수 있습니다.<br>장례를 준비하는 일은 갑작스럽게 다가오고, 대부분 처음 겪으시는 경우가 많습니다</p>
+                    <p>이별을 맞이하시는 지금은 마음이 많이 힘드실 수 있습니다.</p>
+                    <p>장례를 준비하는 일은 갑작스럽게 다가오고,<br>대부분 처음 겪으시는 경우가 많습니다</p>
                     <p>그래서 안내받으신 곳을 그대로 따라가게 되기도 하는데,<br>그건 지극히 자연스러운 일입니다</p>
                 </div>
             </div>
@@ -348,26 +324,21 @@
 
         <section class="band" aria-labelledby="sec-anchor1">
             <div class="shell">
-                <p class="anchor-text" id="sec-anchor1">그렇게 결정하시는 경우도 많습니다</p>
-                <div class="copy-block" id="sec-structure">
-                    <p>이 과정 안에는 때로<br>연결·중개와 관련한 비용이 포함되기도 합니다</p>
+                <p class="anchor-text" id="sec-anchor1">마음은 급한데, 한눈에 비교하기 어려울 수 있습니다</p>
+                <div class="copy-block" id="sec-compare">
+                    <p>장례 비용은 업체마다 기준 무게와 포함 서비스가 달라<br>비교하고 판단하기가 어려울 수 있습니다</p>
+                    <p>레인보우나이츠에서는 표준화된 방식으로<br>장례서비스를 비교하고 선택하실 수 있습니다.</p>
                 </div>
             </div>
         </section>
 
         <section class="band" aria-labelledby="sec-anchor2">
             <div class="shell">
-                <p class="anchor-text" id="sec-anchor2">마음은 급한데, 비용은 한눈에 비교하기 어려울 수 있습니다</p>
-                <div class="copy-block" id="sec-problem">
-                    <p>장례 비용은<br>기준 무게와 포함 서비스에 따라 달라<br>한 곳의 정보만으로는 판단이 어려울 수 있습니다</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="band" aria-labelledby="sec-solution">
-            <div class="shell">
-                <div class="copy-block" id="sec-solution">
-                    <p>같은 조건을 기준으로<br>여러 곳을 비교해 보신 뒤 고르셔도 괜찮습니다</p>
+                <p class="anchor-text" id="sec-anchor2">장례비용의 2%를 기부합니다.</p>
+                <div class="copy-block" id="sec-donation-brief">
+                    <p>동물병원에 금전적인 보상을 드리는 대신 동물보호단체에 기부를 합니다.</p>
+                    <p>매년 1월과 7월, 동물자유연대에 후원금을 기부하고<br>기부내용을 공개합니다.</p>
+                    <p>저희의 뜻에 공감해주시는 동물병원과 함께 합니다.</p>
                 </div>
             </div>
         </section>
@@ -413,21 +384,10 @@
             </div>
         </section>
 
-        <section class="band" aria-labelledby="sec-donation">
-            <div class="shell">
-                <p class="anchor-text" id="sec-donation">병원 쪽 보상이나 할인 대신, 기부로 이어갑니다</p>
-                <div class="copy-block" id="sec-donation-copy">
-                    <p>저희는 동물병원과의 연계에 금전적 보상을 드리지 않고, 보호자님께도 할인으로 부담만 덜어드리는 방식은 쓰지 않습니다. 여러 곳을 같은 기준으로 비교해 보실 수 있기를 바라는 마음에서입니다.</p>
-                    <p>장례비용의 2%를 적립하며, 상반기(1~6월) 구간은 매년 7월에, 하반기(7~12월) 구간은 다음 해 1월에 기부를 집행합니다. 동물자유연대를 비롯해 정상적으로 운영 중인 동물보호단체에 전달합니다.</p>
-                    <p>함께해 주시는 병원과도 비슷한 취지로 움직여 주시고 있습니다. 레인보우나이츠를 찾아주신 보호자님도 천천히, 스스로의 기준으로 고르시길 원하는 경우가 많습니다.</p>
-                </div>
-            </div>
-        </section>
-
         <section class="band" aria-labelledby="sec-emotion">
             <div class="shell">
                 <div class="copy-block" id="sec-emotion">
-                    <p>아이를 보내는 순간만큼은<br>마지막 선택은 보호자님의 마음가짐과 기준이 우선이라고 믿습니다</p>
+                    <p>아이를 보내는 순간만큼은<br>보호자님의 마음가짐과 기준이 우선이라고 믿습니다</p>
                 </div>
             </div>
         </section>
@@ -435,7 +395,7 @@
         <section class="band" id="cta-section" aria-labelledby="sec-cta">
             <div class="shell">
                 <div class="copy-block cta-lead">
-                    <p>오늘 꼭 정하실 필요는 없습니다<br>편하실 때 한 번 확인해 보신 뒤, 준비가 되셨을 때 고르셔도 됩니다</p>
+                    <p>지금 꼭 정하실 필요는 없습니다<br>편하실 때 한 번 확인해 보신 뒤,<br>준비가 되셨을 때 선택하셔도 됩니다</p>
                 </div>
                 <div class="cta-block">
                     <div class="btn-row">
@@ -445,12 +405,6 @@
             </div>
         </section>
     </main>
-
-    <div class="sticky-cta" role="region" aria-label="하단 안내">
-        <div class="shell">
-            <a class="btn btn-primary" id="btnStickyCta" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">장례 정보 확인하기</a>
-        </div>
-    </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -505,10 +459,6 @@
             document.getElementById('btnOpenService').addEventListener('click', function () {
                 ctaClick('btnOpenService', 'footer_funeral_service');
                 externalLink('footer_funeral_service');
-            });
-            document.getElementById('btnStickyCta').addEventListener('click', function () {
-                ctaClick('btnStickyCta', 'sticky_funeral_info');
-                externalLink('sticky_funeral_info');
             });
             document.getElementById('headerServiceLink').addEventListener('click', function () {
                 ctaClick('headerServiceLink', 'header_detail');
