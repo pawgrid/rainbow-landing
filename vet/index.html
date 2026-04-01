@@ -45,7 +45,7 @@
             letter-spacing: -0.01em;
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
-            padding-bottom: calc(5.25rem + var(--safe-bottom));
+            padding-bottom: calc(1.25rem + var(--safe-bottom));
         }
         main { background: var(--bg); }
         @media (prefers-reduced-motion: reduce) {
@@ -214,24 +214,6 @@
             background: var(--primary-hover);
             box-shadow: 0 2px 10px rgba(15, 23, 42, 0.18);
         }
-        .sticky-cta {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 999;
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-top: 1px solid var(--line-soft);
-            padding: 0.875rem var(--shell-x) calc(0.875rem + var(--safe-bottom));
-            box-shadow: 0 -2px 8px rgba(15, 23, 42, 0.06);
-        }
-        .sticky-cta .shell {
-            max-width: 28rem;
-            margin: 0 auto;
-        }
-        .sticky-cta .btn-primary { width: 100%; }
         .btn-secondary {
             background: var(--surface);
             color: var(--text);
@@ -242,7 +224,7 @@
         .btn-secondary:hover { background: var(--trust-bg); }
         .toast {
             position: fixed;
-            bottom: calc(5.25rem + var(--safe-bottom));
+            bottom: calc(1.25rem + var(--safe-bottom));
             left: 50%;
             transform: translateX(-50%) translateY(6px);
             background: var(--text);
@@ -278,7 +260,7 @@
     <main>
         <div class="hero">
             <div class="shell">
-                <h1 id="hero">보호자의 장례문의,<br>곤란하셨나요?</h1>
+                <h1 id="hero">보호자의 장례 문의,<br>곤란하셨나요?</h1>
                 <p class="hero-slogan">장례업체 소개로 인한 리스크를 줄이시고<br>기부를 통해 의미 있는 선택에 함께 하세요.</p>
             </div>
         </div>
@@ -295,9 +277,8 @@
             <div class="shell">
                 <p class="anchor-text" id="sec-platform">보호자가 직접 비교하고 선택하는 플랫폼</p>
                 <div class="copy-block" id="sec-platform-copy">
-                    <p>보호자에게 링크만 전달해 주세요.</p>
-                    <p>특정 업체 소개의 리스크가 없습니다.</p>
-                    <p>보호자가 표준화된 정보를 확인하고 장례 서비스를 직접 선택할 수 있습니다.</p>
+                    <p>보호자에게 레인보우나이츠 링크만 전달해 주세요.</p>
+                    <p>보호자가 표준화된 장례 서비스 정보를 확인하고 직접 선택하기 때문에 특정 업체 소개로 인한 리스크가 없습니다. 장례 안내는 저희에게 맡기고 본업에 집중하실 수 있습니다.</p>
                 </div>
             </div>
         </section>
@@ -311,7 +292,7 @@
                         <li>기부 시기 : 매년 1월, 7월</li>
                         <li>기부 단체 : 동물자유연대</li>
                     </ul>
-                    <p>일부 장례업체에서 드리는 소개비용은 제공해드리지 못하지만, 특정 장례업체를 소개하셨을 때의 여러 불편함과 리스크를 줄여드리고, 보호자에게도 동물병원의 의미 있는 선택을 잘 설명드리겠습니다.</p>
+                    <p>일부 장례 업체처럼 소개비용을 드리지는 못하지만 장례 안내로 인한 불편함과 리스크를 줄여 드리고, 보호자에게도 동물병원의 의미 있는 선택을 잘 전하겠습니다.</p>
                 </div>
             </div>
         </section>
@@ -327,12 +308,6 @@
             </div>
         </section>
     </main>
-
-    <div class="sticky-cta" role="region" aria-label="하단 안내">
-        <div class="shell">
-            <a class="btn btn-primary" id="btnStickyCta" href="/customer/">보호자용 안내 페이지 열기</a>
-        </div>
-    </div>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -386,7 +361,6 @@
                 });
             }
             bindCta(document.getElementById('btnOpenCustomer'), 'open_customer_page');
-            bindCta(document.getElementById('btnStickyCta'), 'sticky_open_customer');
 
             function getCustomerPageUrl() {
                 return new URL('/customer/', window.location.origin).href;

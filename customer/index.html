@@ -160,35 +160,24 @@
             max-width: var(--measure);
             margin: 0;
         }
-        .anchor-text + .copy-block,
-        .anchor-text + .service-list {
+        .anchor-text + .copy-block {
             margin-top: 0.5rem;
         }
-        .service-list {
-            margin-top: 0;
-            margin-left: 0;
-            margin-right: 0;
+        .donation-detail-list {
+            list-style: none;
+            margin: 0.75rem 0 0;
+            padding: 0;
             font-size: 1rem;
-            line-height: 1.75;
+            line-height: 1.65;
             color: var(--text);
             max-width: var(--measure);
-            padding: 1.25rem 1.25rem 1.35rem;
-            border: 1px solid var(--line);
-            border-radius: var(--radius-lg);
-            background: var(--surface);
         }
-        .service-list p { margin-bottom: 0.625rem; }
-        .service-list ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        .service-list li {
+        .donation-detail-list li {
             position: relative;
             padding-left: 1rem;
-            margin-top: 0.5rem;
         }
-        .service-list li::before {
+        .donation-detail-list li + li { margin-top: 0.35rem; }
+        .donation-detail-list li::before {
             content: "–";
             position: absolute;
             left: 0;
@@ -305,9 +294,9 @@
         <div class="hero">
             <div class="shell">
                 <h1>장례는 한 번뿐인데,<br>한 곳만 보고 결정해도 괜찮을까요?</h1>
-                <p class="hero-slogan">아이의 마지막 길에서 동물병원과 레인보우나이츠가 의미있는 선택을 함께합니다.</p>
+                <p class="hero-slogan">아이의 마지막 길에서 동물병원과 레인보우나이츠가 의미 있는 선택을 함께 합니다.</p>
                 <div class="hero-cta">
-                    <a class="btn btn-primary" id="btnHeroCta" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">장례 정보 확인하기</a>
+                    <a class="btn btn-primary" id="btnHeroCta" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">장례 서비스 확인하기</a>
                 </div>
             </div>
         </div>
@@ -317,7 +306,7 @@
                 <div class="copy-block" id="sec-empathy">
                     <p>이별을 맞이하시는 지금은 마음이 많이 힘드실 수 있습니다.</p>
                     <p>장례를 준비하는 일은 갑작스럽게 다가오고,<br>대부분 처음 겪으시는 경우가 많습니다</p>
-                    <p>그래서 안내받으신 곳을 그대로 따라가게 되기도 하는데,<br>그건 지극히 자연스러운 일입니다</p>
+                    <p>그래서 안내 받으신 곳을 그대로 따라가게 되기도 하는데,<br>그건 지극히 자연스러운 일입니다</p>
                 </div>
             </div>
         </section>
@@ -327,7 +316,7 @@
                 <p class="anchor-text" id="sec-anchor1">마음은 급한데, 한눈에 비교하기 어려울 수 있습니다</p>
                 <div class="copy-block" id="sec-compare">
                     <p>장례 비용은 업체마다 기준 무게와 포함 서비스가 달라<br>비교하고 판단하기가 어려울 수 있습니다</p>
-                    <p>레인보우나이츠에서는 표준화된 방식으로<br>장례서비스를 비교하고 선택하실 수 있습니다.</p>
+                    <p>레인보우나이츠에서는 표준화된 방식으로<br>장례 서비스를 비교하고 선택하실 수 있습니다.</p>
                 </div>
             </div>
         </section>
@@ -336,21 +325,10 @@
             <div class="shell">
                 <p class="anchor-text" id="sec-anchor2">장례비용의 2%를 기부합니다.</p>
                 <div class="copy-block" id="sec-donation-brief">
-                    <p>동물병원에 금전적인 보상을 드리는 대신 동물보호단체에 기부를 합니다.</p>
-                    <p>매년 1월과 7월, 동물자유연대에 후원금을 기부하고<br>기부내용을 공개합니다.</p>
-                    <p>저희의 뜻에 공감해주시는 동물병원과 함께 합니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="band" aria-labelledby="sec-anchor3">
-            <div class="shell">
-                <p class="anchor-text" id="sec-anchor3">비교에 쓰이는 기준을 정리했습니다</p>
-                <div class="service-list" id="sec-service">
-                    <p>저희 레인보우나이츠는</p>
-                    <ul>
-                        <li>기준에 맞춰 비용을 살펴보실 수 있게 하고</li>
-                        <li>여러 장례 업체를 비교해 보실 수 있도록 돕습니다</li>
+                    <p>동물병원에 금전적인 보상을 드리는 대신 동물보호단체에 기부를 합니다. 저희의 뜻에 공감해 주시는 동물병원과 함께 합니다.</p>
+                    <ul class="donation-detail-list">
+                        <li>기부 시기 : 매년 1월, 7월</li>
+                        <li>기부 단체 : 동물자유연대</li>
                     </ul>
                 </div>
             </div>
