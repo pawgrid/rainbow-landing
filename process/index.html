@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레인보우나이츠 이용 방법 | 미리보기</title>
-    <meta name="description" content="레인보우나이츠에서 장례 서비스를 찾고 예약까지 이어지는 순서를 한눈에 정리했습니다.">
+    <title>레인보우나이츠 이용 순서 · 상세 섹션</title>
+    <meta name="description" content="레인보우나이츠에서 장례 서비스 선택부터 예약 완료까지의 순서입니다.">
     <link rel="canonical" href="https://www.pawgrid.io/process/">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" crossorigin>
@@ -13,28 +13,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --paper: #faf8f5;
             --surface: #ffffff;
-            --wash: #f0ebe3;
             --ink: #2c2825;
             --muted: #6b6560;
             --line: #e8e4dc;
             --accent: #5c6b5e;
-            --accent-2: #6d7a72;
-            --accent-soft: #e8ece9;
-            --success: #5a6d62;
-            --radius: 16px;
-            --radius-sm: 12px;
+            --radius: 12px;
             --step-line: #d9d3c9;
+            --flow-pad: 1rem;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html { scroll-behavior: smooth; }
-
         @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            .rk-flow-step { transition: none !important; }
+            .rk-flow-step-num { transition: none !important; }
         }
 
         body {
@@ -42,162 +34,34 @@
             color: var(--ink);
             line-height: 1.65;
             letter-spacing: -0.02em;
-            background: var(--paper);
+            background: #faf8f5;
             -webkit-font-smoothing: antialiased;
+            padding: 1rem;
         }
 
-        .preview-banner {
-            background: var(--ink);
-            color: #f5f3f0;
-            padding: 0.65rem 1rem;
-            font-size: 0.8125rem;
-            text-align: center;
-        }
-
-        .preview-banner code { font-size: 0.75em; opacity: 0.88; }
-
-        .page-header {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--line);
-            position: sticky;
-            top: 0;
-            z-index: 20;
-        }
-
-        .page-header-inner {
-            max-width: 40rem;
-            margin: 0 auto;
-            padding: 0.65rem 1.125rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-        }
-
-        .page-header a.brand {
-            font-size: 0.875rem;
-            font-weight: 700;
-            color: var(--ink);
-            text-decoration: none;
-            letter-spacing: -0.03em;
-        }
-
-        .page-header a.brand small {
-            display: block;
-            font-size: 0.6875rem;
-            font-weight: 500;
-            color: var(--muted);
-            margin-top: 0.1rem;
-        }
-
-        .page-header-cta {
-            flex-shrink: 0;
-            font-size: 0.8125rem;
-            font-weight: 600;
-            color: #fff;
-            background: var(--ink);
-            padding: 0.45rem 0.9rem;
-            border-radius: 999px;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .page-header-cta:hover { opacity: 0.9; }
-
-        .page-hero {
-            padding: 2.25rem 1.125rem 1.75rem;
-            max-width: 40rem;
-            margin: 0 auto;
-            text-align: center;
-            border-bottom: 1px solid var(--line);
-            background: linear-gradient(180deg, var(--wash) 0%, var(--paper) 70%);
-        }
-
-        .page-hero-eyebrow {
-            font-size: 0.6875rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--accent-2);
-            margin-bottom: 0.6rem;
-        }
-
-        .page-hero h1 {
-            font-family: "Noto Serif KR", serif;
-            font-size: clamp(1.35rem, 4.2vw, 1.75rem);
-            font-weight: 600;
-            letter-spacing: -0.04em;
-            line-height: 1.3;
-            color: var(--ink);
-            margin-bottom: 0.65rem;
-        }
-
-        .page-hero p {
-            font-size: 0.9375rem;
-            color: var(--muted);
-            max-width: 22rem;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .page-body {
-            max-width: 40rem;
-            margin: 0 auto;
-            padding: 1.75rem 1.125rem 3rem;
-        }
-
-        .embed-hint {
-            font-size: 0.75rem;
-            color: var(--muted);
-            line-height: 1.55;
-            margin-bottom: 1.25rem;
-            padding: 0.75rem 0.85rem;
-            background: var(--accent-soft);
-            border: 1px solid var(--line);
-            border-radius: var(--radius-sm);
-        }
-
-        .embed-hint strong { color: var(--ink); font-weight: 600; }
-
-        /* ========== 상세 페이지 등에 붙일 블록 (아래 section + 스타일 복사) ========== */
         .rk-service-flow {
-            --flow-pad: 1.25rem;
+            max-width: 28rem;
+            margin: 0 auto;
             background: var(--surface);
             border: 1px solid var(--line);
             border-radius: var(--radius);
             padding: var(--flow-pad);
-            box-shadow: 0 4px 28px rgba(44, 40, 37, 0.05);
-        }
-
-        .rk-service-flow--dense {
-            --flow-pad: 1rem;
-            box-shadow: none;
         }
 
         .rk-service-flow-head {
-            margin-bottom: 1.35rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--line);
-        }
-
-        .rk-service-flow--dense .rk-service-flow-head {
             margin-bottom: 1rem;
             padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--line);
         }
 
         .rk-service-flow-title {
             font-family: "Noto Serif KR", serif;
-            font-size: 1.125rem;
+            font-size: 1rem;
             font-weight: 600;
             letter-spacing: -0.03em;
             color: var(--ink);
             margin: 0 0 0.35rem;
             line-height: 1.35;
-        }
-
-        .rk-service-flow--dense .rk-service-flow-title {
-            font-size: 1rem;
         }
 
         .rk-service-flow-sub {
@@ -214,29 +78,18 @@
             position: relative;
         }
 
-        /* 세로 연결선 */
         .rk-service-flow-steps::before {
             content: "";
             position: absolute;
-            left: calc(1.125rem - 0.5px);
+            left: calc(0.9375rem - 0.5px);
             top: 0.5rem;
-            bottom: 2.25rem;
+            bottom: 1.75rem;
             width: 1px;
             background: linear-gradient(180deg, var(--step-line) 0%, var(--step-line) 92%, transparent 100%);
         }
 
-        .rk-service-flow--dense .rk-service-flow-steps::before {
-            left: calc(0.9375rem - 0.5px);
-            bottom: 1.75rem;
-        }
-
         .rk-flow-step {
             position: relative;
-            padding-left: 2.75rem;
-            padding-bottom: 1.35rem;
-        }
-
-        .rk-service-flow--dense .rk-flow-step {
             padding-left: 2.35rem;
             padding-bottom: 1rem;
         }
@@ -249,25 +102,19 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 2.25rem;
-            height: 2.25rem;
+            width: 1.875rem;
+            height: 1.875rem;
             border-radius: 50%;
             background: var(--surface);
             border: 2px solid var(--accent);
             color: var(--accent);
-            font-size: 0.8125rem;
+            font-size: 0.75rem;
             font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 1;
-            box-shadow: 0 0 0 4px var(--surface);
-        }
-
-        .rk-service-flow--dense .rk-flow-step-num {
-            width: 1.875rem;
-            height: 1.875rem;
-            font-size: 0.75rem;
+            box-shadow: 0 0 0 3px var(--surface);
         }
 
         .rk-flow-step.is-final .rk-flow-step-num {
@@ -281,7 +128,7 @@
         }
 
         .rk-flow-step-title {
-            font-size: 0.9375rem;
+            font-size: 0.875rem;
             font-weight: 700;
             color: var(--ink);
             letter-spacing: -0.02em;
@@ -289,19 +136,11 @@
             line-height: 1.35;
         }
 
-        .rk-service-flow--dense .rk-flow-step-title {
-            font-size: 0.875rem;
-        }
-
         .rk-flow-step-desc {
-            font-size: 0.8125rem;
+            font-size: 0.75rem;
             color: var(--muted);
             margin: 0;
             line-height: 1.55;
-        }
-
-        .rk-service-flow--dense .rk-flow-step-desc {
-            font-size: 0.75rem;
         }
 
         .rk-flow-step:hover .rk-flow-step-num {
@@ -314,222 +153,58 @@
             border-color: var(--ink);
             color: #fff;
         }
-
-        .rk-service-flow-foot {
-            margin-top: 1.25rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--line);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-        }
-
-        .rk-service-flow--dense .rk-service-flow-foot {
-            margin-top: 0.85rem;
-            padding-top: 0.75rem;
-        }
-
-        .rk-service-flow-foot p {
-            font-size: 0.75rem;
-            color: var(--muted);
-            margin: 0;
-            flex: 1 1 12rem;
-            min-width: 0;
-            line-height: 1.5;
-        }
-
-        .rk-service-flow-foot a {
-            flex-shrink: 0;
-            font-size: 0.8125rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-        }
-
-        .rk-service-flow-foot a:hover {
-            border-bottom-color: var(--accent);
-        }
-
-        .density-demo {
-            margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px dashed var(--line);
-        }
-
-        .density-demo h2 {
-            font-size: 0.875rem;
-            font-weight: 700;
-            color: var(--ink);
-            margin-bottom: 0.5rem;
-        }
-
-        .density-demo > p {
-            font-size: 0.8125rem;
-            color: var(--muted);
-            margin-bottom: 1rem;
-            line-height: 1.55;
-        }
-
-        .page-footer-note {
-            max-width: 40rem;
-            margin: 0 auto;
-            padding: 0 1.125rem 2.5rem;
-            font-size: 0.75rem;
-            color: var(--muted);
-            line-height: 1.55;
-        }
-
-        .page-footer-note strong { color: var(--ink); }
     </style>
 </head>
 <body>
-    <div class="preview-banner">
-        레인보우나이츠 <strong>이용 절차</strong> UI · 배포 전 미리보기 <code>/process/</code> → 이후 rainbowknights.io 로 이전
-    </div>
-
-    <header class="page-header">
-        <div class="page-header-inner">
-            <a class="brand" href="/">Rainbow Knights<small>레인보우나이츠</small></a>
-            <a class="page-header-cta" href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">서비스 열기</a>
-        </div>
-    </header>
-
-    <div class="page-hero">
-        <p class="page-hero-eyebrow">이용 안내</p>
-        <h1>레인보우나이츠<br>이용 방법</h1>
-        <p>처음이셔도 순서만 알아 두시면 부담이 덜해져요. 예약이 확정되기까지의 흐름을 짧게 정리했습니다.</p>
-    </div>
-
-    <main class="page-body">
-        <p class="embed-hint">
-            <strong>복사용:</strong> 아래 <code>section.rk-service-flow</code> 한 덩어리와 이 파일의 <code>.rk-service-flow</code>로 시작하는 스타일을 함께 옮기시면 됩니다.
-            상세 페이지처럼 좁은 영역에는 루트에 <code>rk-service-flow--dense</code> 클래스를 추가해 보세요.
-        </p>
-
-        <!-- ▼▼▼ 상세 페이지 / 랜딩 공통 삽입 블록 ▼▼▼ -->
-        <section class="rk-service-flow" aria-labelledby="rk-service-flow-heading">
-            <header class="rk-service-flow-head">
-                <h2 id="rk-service-flow-heading" class="rk-service-flow-title">이용 순서</h2>
-                <p class="rk-service-flow-sub">메인에서 서비스를 고르는 것부터 예약이 완료되기까지예요.</p>
-            </header>
-            <ol class="rk-service-flow-steps">
-                <li class="rk-flow-step">
-                    <span class="rk-flow-step-num" aria-hidden="true">1</span>
-                    <div class="rk-flow-step-body">
-                        <h3 class="rk-flow-step-title">장례 서비스 선택</h3>
-                        <p class="rk-flow-step-desc">메인 화면에서 장례 서비스를 고르시거나, 검색으로 원하시는 서비스를 찾아 주세요.</p>
-                    </div>
-                </li>
-                <li class="rk-flow-step">
-                    <span class="rk-flow-step-num" aria-hidden="true">2</span>
-                    <div class="rk-flow-step-body">
-                        <h3 class="rk-flow-step-title">무게 입력 후 가격 확인</h3>
-                        <p class="rk-flow-step-desc">아이의 체중을 입력하시면 같은 기준으로 산출된 금액을 바로 확인하실 수 있어요.</p>
-                    </div>
-                </li>
-                <li class="rk-flow-step">
-                    <span class="rk-flow-step-num" aria-hidden="true">3</span>
-                    <div class="rk-flow-step-body">
-                        <h3 class="rk-flow-step-title">정보·리뷰 보고 서비스 결정</h3>
-                        <p class="rk-flow-step-desc">서비스 이미지와 설명, 다른 보호자분들의 리뷰를 살펴보신 뒤 맞는 서비스를 선택해 주세요.</p>
-                    </div>
-                </li>
-                <li class="rk-flow-step">
-                    <span class="rk-flow-step-num" aria-hidden="true">4</span>
-                    <div class="rk-flow-step-body">
-                        <h3 class="rk-flow-step-title">예약 일정 선택 후 결제</h3>
-                        <p class="rk-flow-step-desc">원하시는 일정을 고르시고 결제하시면 예약이 접수돼요.</p>
-                    </div>
-                </li>
-                <li class="rk-flow-step">
-                    <span class="rk-flow-step-num" aria-hidden="true">5</span>
-                    <div class="rk-flow-step-body">
-                        <h3 class="rk-flow-step-title">업체 확인 후 카카오톡 안내</h3>
-                        <p class="rk-flow-step-desc">업체에서 일정을 확인한 뒤, 예약 확정 안내가 카카오톡 메시지로 발송돼요.</p>
-                    </div>
-                </li>
-                <li class="rk-flow-step is-final">
-                    <span class="rk-flow-step-num" aria-hidden="true">6</span>
-                    <div class="rk-flow-step-body">
-                        <h3 class="rk-flow-step-title">예약 완료</h3>
-                        <p class="rk-flow-step-desc">안내를 받으신 시점부터 예약이 확정된 상태예요. 이후 일정은 업체 안내에 따라 진행돼요.</p>
-                    </div>
-                </li>
-            </ol>
-            <footer class="rk-service-flow-foot">
-                <p>문의나 변경이 필요하시면 앱·웹의 고객 지원 또는 해당 업체로 연락해 주세요.</p>
-                <a href="https://www.rainbowknights.io" target="_blank" rel="noopener noreferrer">레인보우나이츠 열기 →</a>
-            </footer>
-        </section>
-        <!-- ▲▲▲ 여기까지 복사 ▲▲▲ -->
-
-        <div class="density-demo">
-            <h2>상세 페이지용 · 축소 밀도 예시</h2>
-            <p>아래는 동일한 내용에 <code>rk-service-flow--dense</code>만 더한 모습입니다.</p>
-
-            <section class="rk-service-flow rk-service-flow--dense" aria-labelledby="rk-service-flow-heading-dense">
-                <header class="rk-service-flow-head">
-                    <h2 id="rk-service-flow-heading-dense" class="rk-service-flow-title">이용 순서</h2>
-                    <p class="rk-service-flow-sub">메인에서 예약 완료까지</p>
-                </header>
-                <ol class="rk-service-flow-steps">
-                    <li class="rk-flow-step">
-                        <span class="rk-flow-step-num" aria-hidden="true">1</span>
-                        <div class="rk-flow-step-body">
-                            <h3 class="rk-flow-step-title">장례 서비스 선택</h3>
-                            <p class="rk-flow-step-desc">메인에서 선택하거나 검색으로 찾기</p>
-                        </div>
-                    </li>
-                    <li class="rk-flow-step">
-                        <span class="rk-flow-step-num" aria-hidden="true">2</span>
-                        <div class="rk-flow-step-body">
-                            <h3 class="rk-flow-step-title">무게 입력 후 가격 확인</h3>
-                            <p class="rk-flow-step-desc">같은 기준으로 산출된 금액 확인</p>
-                        </div>
-                    </li>
-                    <li class="rk-flow-step">
-                        <span class="rk-flow-step-num" aria-hidden="true">3</span>
-                        <div class="rk-flow-step-body">
-                            <h3 class="rk-flow-step-title">정보·리뷰로 서비스 결정</h3>
-                            <p class="rk-flow-step-desc">이미지·설명·리뷰 확인 후 선택</p>
-                        </div>
-                    </li>
-                    <li class="rk-flow-step">
-                        <span class="rk-flow-step-num" aria-hidden="true">4</span>
-                        <div class="rk-flow-step-body">
-                            <h3 class="rk-flow-step-title">일정 선택 후 결제</h3>
-                            <p class="rk-flow-step-desc">예약 접수</p>
-                        </div>
-                    </li>
-                    <li class="rk-flow-step">
-                        <span class="rk-flow-step-num" aria-hidden="true">5</span>
-                        <div class="rk-flow-step-body">
-                            <h3 class="rk-flow-step-title">업체 확인 후 카톡 안내</h3>
-                            <p class="rk-flow-step-desc">예약 확정 메시지 발송</p>
-                        </div>
-                    </li>
-                    <li class="rk-flow-step is-final">
-                        <span class="rk-flow-step-num" aria-hidden="true">6</span>
-                        <div class="rk-flow-step-body">
-                            <h3 class="rk-flow-step-title">예약 완료</h3>
-                            <p class="rk-flow-step-desc">확정 상태, 이후는 업체 안내</p>
-                        </div>
-                    </li>
-                </ol>
-                <footer class="rk-service-flow-foot">
-                    <p>자세한 장례 준비는 안내서를 참고해 주세요.</p>
-                    <a href="/guide.html">장례 안내서 →</a>
-                </footer>
-            </section>
-        </div>
-    </main>
-
-    <p class="page-footer-note">
-        <strong>rainbowknights.io 이전 시:</strong> 스타일은 그대로 두고 링크만 서비스 URL·고객센터 경로에 맞게 바꾸시면 됩니다.
-        상세 페이지 한정이면 위 <strong>축소</strong> 블록만 넣고, 전체 페이지로 쓰실 때는 첫 번째 블록만 사용하셔도 됩니다.
-    </p>
+    <section class="rk-service-flow" aria-labelledby="rk-service-flow-heading">
+        <header class="rk-service-flow-head">
+            <h2 id="rk-service-flow-heading" class="rk-service-flow-title">레인보우나이츠 이용 순서</h2>
+            <p class="rk-service-flow-sub">메인에서 예약이 완료되기까지의 흐름이에요.</p>
+        </header>
+        <ol class="rk-service-flow-steps">
+            <li class="rk-flow-step">
+                <span class="rk-flow-step-num" aria-hidden="true">1</span>
+                <div class="rk-flow-step-body">
+                    <h3 class="rk-flow-step-title">장례 서비스 선택</h3>
+                    <p class="rk-flow-step-desc">메인 화면에서 장례 서비스를 고르시거나, 검색으로 원하시는 서비스를 찾아 주세요.</p>
+                </div>
+            </li>
+            <li class="rk-flow-step">
+                <span class="rk-flow-step-num" aria-hidden="true">2</span>
+                <div class="rk-flow-step-body">
+                    <h3 class="rk-flow-step-title">무게 입력 후 가격 확인</h3>
+                    <p class="rk-flow-step-desc">아이의 체중을 입력하시면 같은 기준으로 산출된 금액을 바로 확인하실 수 있어요.</p>
+                </div>
+            </li>
+            <li class="rk-flow-step">
+                <span class="rk-flow-step-num" aria-hidden="true">3</span>
+                <div class="rk-flow-step-body">
+                    <h3 class="rk-flow-step-title">정보·리뷰 보고 서비스 결정</h3>
+                    <p class="rk-flow-step-desc">서비스 이미지와 설명, 다른 보호자분들의 리뷰를 살펴보신 뒤 맞는 서비스를 선택해 주세요.</p>
+                </div>
+            </li>
+            <li class="rk-flow-step">
+                <span class="rk-flow-step-num" aria-hidden="true">4</span>
+                <div class="rk-flow-step-body">
+                    <h3 class="rk-flow-step-title">예약 일정 선택 후 결제</h3>
+                    <p class="rk-flow-step-desc">원하시는 일정을 고르시고 결제하시면 예약이 접수돼요.</p>
+                </div>
+            </li>
+            <li class="rk-flow-step">
+                <span class="rk-flow-step-num" aria-hidden="true">5</span>
+                <div class="rk-flow-step-body">
+                    <h3 class="rk-flow-step-title">업체 확인 후 카카오톡 안내</h3>
+                    <p class="rk-flow-step-desc">업체에서 일정을 확인한 뒤, 예약 확정 안내가 카카오톡 메시지로 발송돼요.</p>
+                </div>
+            </li>
+            <li class="rk-flow-step is-final">
+                <span class="rk-flow-step-num" aria-hidden="true">6</span>
+                <div class="rk-flow-step-body">
+                    <h3 class="rk-flow-step-title">예약 완료</h3>
+                    <p class="rk-flow-step-desc">안내를 받으신 시점부터 예약이 확정된 상태예요. 이후 일정은 업체 안내에 따라 진행돼요.</p>
+                </div>
+            </li>
+        </ol>
+    </section>
 </body>
 </html>
