@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업체 상세 · 장례 안내 티저 (미리보기) | 레인보우나이츠</title>
+    <meta name="description" content="장례가 처음인 보호자를 위한 짧은 안내와 전체 장례 안내서로 이어지는 티저 섹션 UI 미리보기입니다.">
+    <link rel="canonical" href="https://www.pawgrid.io/intro/">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --paper: #faf8f5;
+            --surface: #ffffff;
+            --ink: #2c2825;
+            --muted: #6b6560;
+            --line: #e8e4dc;
+            --accent: #5c6b5e;
+            --accent-soft: #e8ece9;
+            --preview-bg: #eef1f4;
+            --radius: 12px;
+            --radius-sm: 10px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            color: var(--ink);
+            line-height: 1.65;
+            letter-spacing: -0.02em;
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 3rem;
+        }
+
+        .preview-banner {
+            background: var(--ink);
+            color: #f5f3f0;
+            padding: 0.65rem 1rem;
+            font-size: 0.8125rem;
+            text-align: center;
+        }
+
+        .preview-banner code {
+            font-size: 0.75em;
+            opacity: 0.85;
+        }
+
+        .preview-wrap {
+            max-width: 28rem;
+            margin: 0 auto;
+            padding: 1.25rem 1.125rem 0;
+        }
+
+        .preview-note {
+            font-size: 0.8125rem;
+            color: var(--muted);
+            margin-bottom: 1rem;
+            line-height: 1.55;
+        }
+
+        /* 가짜 상세 페이지 뼈대 (업체 정보 영역은 회색으로 축소 표현) */
+        .mock-detail {
+            background: var(--preview-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(44, 40, 37, 0.06);
+        }
+
+        .mock-detail-header {
+            padding: 1rem 1.1rem;
+            background: var(--surface);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .mock-detail-header h1 {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--ink);
+        }
+
+        .mock-detail-header p {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-top: 0.25rem;
+        }
+
+        .mock-detail-body {
+            padding: 0.75rem;
+        }
+
+        .mock-placeholder {
+            height: 4.5rem;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(110deg, #e2e8f0 0%, #f1f5f9 40%, #e2e8f0 80%);
+            background-size: 200% 100%;
+            animation: shimmer 2.5s ease-in-out infinite;
+            margin-bottom: 0.75rem;
+            opacity: 0.85;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .mock-placeholder { animation: none; }
+        }
+
+        /* ========== 업체 상세에 실제로 붙일 블록 (이 아래 마크업·클래스를 복사) ========== */
+        .detail-guide-teaser {
+            margin: 0;
+            padding: 0.95rem 1rem 1.05rem;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            text-align: left;
+        }
+
+        .detail-guide-teaser-title {
+            font-family: "Noto Serif KR", serif;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            color: var(--ink);
+            line-height: 1.35;
+            margin: 0 0 0.35rem;
+        }
+
+        .detail-guide-teaser-lead {
+            font-size: 0.75rem;
+            color: var(--muted);
+            line-height: 1.5;
+            margin: 0 0 0.65rem;
+        }
+
+        .detail-guide-teaser-points {
+            list-style: none;
+            margin: 0 0 0.75rem;
+            padding: 0;
+        }
+
+        .detail-guide-teaser-points li {
+            position: relative;
+            padding-left: 0.85rem;
+            font-size: 0.8125rem;
+            color: var(--ink);
+            opacity: 0.92;
+            line-height: 1.5;
+        }
+
+        .detail-guide-teaser-points li + li {
+            margin-top: 0.35rem;
+        }
+
+        .detail-guide-teaser-points li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.45em;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.75;
+        }
+
+        .detail-guide-teaser-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .detail-guide-teaser-link:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .detail-guide-teaser-link::after {
+            content: "→";
+            font-size: 0.9em;
+            opacity: 0.85;
+        }
+
+        .implementation-note {
+            max-width: 28rem;
+            margin: 1.5rem auto 0;
+            padding: 0 1.125rem;
+            font-size: 0.75rem;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .implementation-note strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-banner">
+        업체 상세에 넣을 <strong>장례 안내 티저</strong> UI 미리보기 · URL <code>/intro/</code>
+    </div>
+
+    <div class="preview-wrap">
+        <p class="preview-note">
+            아래 회색 블록은 사진·가격 등 <strong>기존 업체 정보</strong>를 상징해요. 그 아래가 실제로 삽입할 <strong>얇은 안내 한 덩어리</strong>입니다.
+        </p>
+
+        <div class="mock-detail" aria-label="업체 상세 화면 예시">
+            <div class="mock-detail-header">
+                <h1>○○ 펫메모리얼 (예시)</h1>
+                <p>서울 ○○구 · 개별·공동 화장</p>
+            </div>
+            <div class="mock-detail-body">
+                <div class="mock-placeholder" aria-hidden="true"></div>
+                <div class="mock-placeholder" aria-hidden="true" style="height:3rem;margin-bottom:0.65rem"></div>
+
+                <!-- ▼▼▼ 레인보우나이츠 상세페이지에 붙일 섹션 ▼▼▼ -->
+                <section class="detail-guide-teaser" aria-labelledby="detail-guide-teaser-title">
+                    <h2 id="detail-guide-teaser-title" class="detail-guide-teaser-title">장례가 처음이신가요?</h2>
+                    <p class="detail-guide-teaser-lead">지금은 마음이 먼저예요. 꼭 알아야 할 것만 짧게 적어 두었어요.</p>
+                    <ul class="detail-guide-teaser-points">
+                        <li>서두르지 않으셔도 되고, 가족과 작별하신 뒤 연락하셔도 괜찮아요.</li>
+                        <li>비용은 체중마다 달라요. 무게를 넣으면 같은 기준으로 금액을 비교할 수 있어요.</li>
+                        <li>집에서는 수건이나 천으로 가볍게 감싸 주시고, 서늘한 곳에 두시는 것만으로도 충분한 경우가 많아요.</li>
+                    </ul>
+                    <a class="detail-guide-teaser-link" href="https://www.pawgrid.io/guide.html">레인보우나이츠 장례 안내서에서 더 보기</a>
+                </section>
+                <!-- ▲▲▲ 여기까지 복사 ▲▲▲ -->
+
+            </div>
+        </div>
+
+        <p class="implementation-note">
+            <strong>연결 URL:</strong> 랜딩은 pawgrid.io에 있으므로 위 링크는 <code>https://www.pawgrid.io/guide.html</code> 로 두었습니다.
+            Rainbow Knights 도메인에서만 서비스할 경우에도 동일 경로로 두시거나, 배포 환경에 맞게 한 곳으로만 통일해 주세요.
+        </p>
+    </div>
+</body>
+</html>
